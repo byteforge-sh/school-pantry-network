@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Map — School Pantry Network</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <a href="https://schoolpantry.network">School Pantry Network</a>
+    <span class="title">District Map</span>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="controls">
+    <div class="control-section">
+      <div class="control-label">View Mode</div>
+      <div class="view-modes">
+        <button class="view-btn active" data-mode="default">Default</button>
+        <button class="view-btn" data-mode="isp">ISP Gradient</button>
+        <button class="view-btn" data-mode="capacity">Capacity</button>
+        <button class="view-btn" data-mode="programs">Programs</button>
+        <button class="view-btn" data-mode="feeder">Feeder Network</button>
+      </div>
+    </div>
+
+    <div class="control-section">
+      <div class="control-label">Boundaries</div>
+      <div class="toggle-group">
+        <label><input type="checkbox" id="toggle-es"> Elementary</label>
+        <label><input type="checkbox" id="toggle-ms"> Middle School</label>
+        <label><input type="checkbox" id="toggle-hs"> High School</label>
+      </div>
+    </div>
+
+    <div class="control-section">
+      <div class="control-label">Region Opacity</div>
+      <div class="slider-container">
+        <input type="range" id="region-opacity" min="0" max="100" value="30" step="5">
+        <span class="slider-value" id="opacity-value">30%</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="legend"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+/* School Pantry Network — Interactive Map */
+
+/* ── Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+/* ── Header bar ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 40px;
+  padding: 0 16px;
+  background: rgba(26, 26, 26, 0.92);
+  border-bottom: 1px solid rgba(90, 154, 88, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header a {
+  color: #5a9a58;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.header .title {
+  color: #e8e8e8;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ── Control panel ── */
+#controls {
+  position: fixed;
+  top: 52px;
+  right: 12px;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.92);
+  border: 1px solid rgba(90, 154, 88, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  width: 200px;
+  backdrop-filter: blur(8px);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* ── Control sections ── */
+.control-section {
+  margin-bottom: 12px;
+}
+
+.control-section:last-child {
+  margin-bottom: 0;
+}
+
+.control-label {
+  color: #a0a0a0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* ── View mode buttons ── */
+.view-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.view-btn {
+  background: transparent;
+  border: 1px solid rgba(90, 154, 88, 0.3);
+  color: #e8e8e8;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-btn:hover {
+  border-color: #5a9a58;
+}
+
+.view-btn.active {
+  background: #3a5a38;
+  border-color: #5a9a58;
+  color: white;
+}
+
+/* ── Boundary toggles ── */
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toggle-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #e8e8e8;
+  cursor: pointer;
+}
+
+.toggle-group input[type="checkbox"] {
+  accent-color: #5a9a58;
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Opacity slider ── */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  accent-color: #5a9a58;
+  height: 4px;
+}
+
+.slider-value {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+  text-align: right;
+}
+
+/* ── Legend ── */
+#legend {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.92);
+  border: 1px solid rgba(90, 154, 88, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  backdrop-filter: blur(8px);
+  max-width: 240px;
+}
+
+.legend-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e8e8e8;
+  margin-bottom: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #e8e8e8;
+  margin-bottom: 3px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-gradient {
+  width: 100%;
+  height: 12px;
+  border-radius: 3px;
+  margin: 4px 0;
+}
+
+/* ── Leaflet popup overrides ── */
+.leaflet-popup-content-wrapper {
+  background: #1a1a1a;
+  color: #e8e8e8;
+  border-radius: 8px;
+  border: 1px solid rgba(90, 154, 88, 0.3);
+}
+
+.leaflet-popup-tip {
+  background: #1a1a1a;
+}
+
+.leaflet-popup-content {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 10px 14px;
+}
+
+.popup-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #8bc48a;
+  margin-bottom: 4px;
+}
+
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.popup-label {
+  color: #a0a0a0;
+}
+
+.popup-value {
+  font-weight: 500;
+}
+
+.popup-section {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(90, 154, 88, 0.3);
+}
+
+.popup-highlight {
+  color: #5a9a58;
+  font-weight: 600;
+}
+
+.popup-badge {
+  display: inline-block;
+  background: #3a5a38;
+  color: #e8e8e8;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  margin-right: 4px;
+}
+
+/* ── Feeder mode highlights ── */
+.school-marker-highlighted {
+  filter: drop-shadow(0 0 6px #8bc48a);
+}
+
+.school-marker-dimmed {
+  opacity: 0.25;
+}
+
+/* ── Region labels ── */
+.region-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8), 0 0 2px rgba(0,0,0,0.9);
+}
+
+/* ── Legend swatches ── */
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ── Attribution ── */
+.leaflet-control-attribution {
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  #controls {
+    right: 8px;
+    width: 170px;
+    padding: 8px;
+    top: 48px;
+  }
+
+  .view-btn {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  #legend {
+    left: 8px;
+    max-width: 180px;
+  }
+
+  .header {
+    padding: 0 10px;
+  }
+}

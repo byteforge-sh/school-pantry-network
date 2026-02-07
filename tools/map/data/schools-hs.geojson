@@ -1,0 +1,293 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.900902,
+          35.974701
+        ]
+      },
+      "properties": {
+        "name": "J.D. Clement Early College",
+        "address": "1801 Fayetteville Street Durham NC 27701",
+        "dpsid": 309,
+        "lat": 35.974701,
+        "lng": -78.900902,
+        "region": "District-wide",
+        "type": "High",
+        "calendar": "Speciality - College",
+        "program": "Early College",
+        "grades": "9 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9621959999999,
+          35.9226990000001
+        ]
+      },
+      "properties": {
+        "name": "Jordan High School",
+        "address": "6806 Garrett Road Durham NC 27707",
+        "dpsid": 312,
+        "lat": 35.922699,
+        "lng": -78.962196,
+        "region": "Southwest",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "9 to 12",
+        "cte": "Agriscience",
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9005969999999,
+          36.0472980000001
+        ]
+      },
+      "properties": {
+        "name": "City of Medicine Academy",
+        "address": "301 Crutchfield Street Durham NC 27704",
+        "dpsid": 317,
+        "lat": 36.047298,
+        "lng": -78.900597,
+        "region": "District-wide",
+        "type": "High",
+        "calendar": "Speciality - College",
+        "program": "Early College",
+        "grades": "9 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.878845,
+          35.989464
+        ]
+      },
+      "properties": {
+        "name": "Performance Learning Center",
+        "address": "401 North Driver St Durham NC 27703",
+        "dpsid": 322,
+        "lat": 35.989464,
+        "lng": -78.878845,
+        "region": "District-wide",
+        "type": "Specialty",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "9 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.906601,
+          36.0033
+        ]
+      },
+      "properties": {
+        "name": "Durham School of the Arts",
+        "address": "401 North Duke Street Durham NC 27701",
+        "dpsid": 323,
+        "lat": 36.0033,
+        "lng": -78.906601,
+        "region": "District-wide",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "Arts",
+        "grades": "6 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.903603,
+          35.9533000000001
+        ]
+      },
+      "properties": {
+        "name": "Hillside High School",
+        "address": "3727 Fayetteville Street Durham NC 27707",
+        "dpsid": 325,
+        "lat": 35.9533,
+        "lng": -78.903603,
+        "region": "Southeast",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "International Baccalaureate (IB)",
+        "grades": "9 to 12",
+        "cte": "Business & Finance Academy",
+        "jrotc": "Army ROTC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.880997,
+          35.975201
+        ]
+      },
+      "properties": {
+        "name": "Middle College at DTCC",
+        "address": "1616 Cooper St Newton Bldg Durham NC 27703",
+        "dpsid": 353,
+        "lat": 35.975201,
+        "lng": -78.880997,
+        "region": "District-wide",
+        "type": "High",
+        "calendar": "Speciality - College",
+        "program": "Early College",
+        "grades": "11 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9005244863386,
+          36.060444803918
+        ]
+      },
+      "properties": {
+        "name": "Northern High School",
+        "address": "117 Tom Wilkinson Durham NC 27712",
+        "dpsid": 356,
+        "lat": 36.06128674,
+        "lng": -78.90032073,
+        "region": "North",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "9 to 12",
+        "cte": "Agriculture, Food, and Natural Resources,  Fire Academy & Public Safety, Hospitality & Tourism",
+        "jrotc": "Air Force ROTC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.937302,
+          36.067799
+        ]
+      },
+      "properties": {
+        "name": "Riverside High School",
+        "address": "3218 Rose of Sharon Road Durham, NC 27712",
+        "dpsid": 365,
+        "lat": 36.067799,
+        "lng": -78.937302,
+        "region": "North & central",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "9 to 12",
+        "cte": "Science, Technology, Engineering, and Math",
+        "jrotc": "Air Force ROTC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.829102,
+          35.9999010000001
+        ]
+      },
+      "properties": {
+        "name": "Southern High School",
+        "address": "800 Clayton Road Durham, NC  27703",
+        "dpsid": 368,
+        "lat": 35.999901,
+        "lng": -78.829102,
+        "region": "East",
+        "type": "High",
+        "calendar": "Traditional",
+        "program": "Energy & Sustainability",
+        "grades": "9 to 12",
+        "cte": "Skilled Trades",
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9367139999999,
+          36.0359950000001
+        ]
+      },
+      "properties": {
+        "name": "Ignite! Online Academy",
+        "address": "2107 Hillandale Rd Durham 27705",
+        "dpsid": 401,
+        "lat": 36.035995,
+        "lng": -78.936714,
+        "region": "District-wide",
+        "type": "Specialty",
+        "calendar": "Traditional",
+        "program": "Online/Virtual",
+        "grades": "K to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.903603,
+          35.9525990000001
+        ]
+      },
+      "properties": {
+        "name": "Durham School of Technology",
+        "address": "3727 Fayetteville Street Durham NC 27707",
+        "dpsid": 701,
+        "lat": 35.952599,
+        "lng": -78.903603,
+        "region": "District-wide",
+        "type": "High",
+        "calendar": "Speciality - College",
+        "program": "Early College",
+        "grades": "9 to 12",
+        "cte": null,
+        "jrotc": null
+      }
+    }
+  ]
+}
