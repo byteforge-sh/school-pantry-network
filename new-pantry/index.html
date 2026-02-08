@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Pantry Network Assessment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #1c2b1c;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #c8dcc4;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .auto-save-status {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(36, 56, 36, 0.95);
+            border: 1px solid #3a5a38;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: #7a9a74;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+
+        .auto-save-status.show {
+            opacity: 1;
+        }
+
+        .btn-clear {
+            background: transparent;
+            border-color: #7a9a74;
+            color: #7a9a74;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-clear:hover {
+            border-color: #d9534f;
+            color: #d9534f;
+            background: rgba(217, 83, 79, 0.05);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            font-family: Georgia, "Times New Roman", serif;
+            letter-spacing: 0.03em;
+            color: #dfeeda;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            font-family: Georgia, "Times New Roman", serif;
+            letter-spacing: 0.02em;
+            color: #dfeeda;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #3a5a38;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #c8dcc4;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            background: #243824;
+            border: 1px solid #3a5a38;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            color: #c0d8bc;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro li {
+            margin-bottom: 0.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .field {
+            margin-bottom: 1.5rem;
+        }
+
+        .question-group {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .question-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #c8dcc4;
+        }
+
+        label .required {
+            color: #d9534f;
+        }
+
+        .help-text {
+            display: block;
+            font-size: 0.875rem;
+            color: #7a9a74;
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(200, 220, 196, 0.1);
+            border: 1px solid #3a5a38;
+            border-radius: 6px;
+            color: #c8dcc4;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #5a9a58;
+            box-shadow: 0 0 0 3px rgba(90, 154, 88, 0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-other {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .submitter-block {
+            background: #243824;
+            border: 1px solid #3a5a38;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .submitter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .submitter-number {
+            font-weight: 600;
+            color: #c8dcc4;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #243824;
+            border: 1px solid #3a5a38;
+            border-radius: 8px;
+            color: #c0d8bc;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            border-color: #5a9a58;
+            box-shadow: 0 2px 10px rgba(90, 154, 88, 0.2);
+            background: #2c4430;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-remove {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            background: transparent;
+            border-color: #d9534f;
+            color: #d9534f;
+        }
+
+        .btn-remove:hover:not(:disabled) {
+            border-color: #c9302c;
+            background: rgba(217, 83, 79, 0.1);
+        }
+
+        .btn-add {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #5a9a58;
+            border-color: #5a9a58;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #4a8a48;
+            border-color: #4a8a48;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .error-message {
+            background: rgba(217, 83, 79, 0.1);
+            border: 1px solid #d9534f;
+            border-radius: 8px;
+            padding: 1rem;
+            color: #d9534f;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .field-error input,
+        .field-error select,
+        .field-error textarea {
+            border-color: #d9534f;
+        }
+
+        #success-message,
+        #error-message {
+            background: #243824;
+            border: 1px solid #3a5a38;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #success-message {
+            border-color: #5a9a58;
+        }
+
+        #error-message {
+            border-color: #d9534f;
+        }
+
+        .success-icon,
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-icon {
+            color: #5a9a58;
+        }
+
+        .error-icon {
+            color: #d9534f;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .intro {
+                padding: 1rem;
+            }
+
+            .submitter-block {
+                padding: 1rem;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .submitter-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auto-save-status" id="auto-save-status">Draft saved</div>
+
+    <div class="container">
+        <header>
+            <h1>School Pantry Network Assessment</h1>
+        </header>
+
+        <div class="intro">
+            <p><strong>Welcome to the School Pantry Network Assessment</strong></p>
+            <p>This assessment works best when completed together by a parent/guardian and a school representative (such as a counselor, social worker, teacher, or administrator).</p>
+            <p><strong>To get started:</strong></p>
+            <ol>
+                <li>Select your school from the dropdown</li>
+                <li>Add contact information for everyone completing this assessment together</li>
+                <li>Work through the questions as a team</li>
+            </ol>
+            <p>Take your time discussing each question. The examples and sub-points are meant to spark conversation and help you think comprehensively about your school's pantry. There are no wrong answers—we want to understand your unique situation so we can provide the best support possible.</p>
+            <p><em>You can skip any questions that don't apply to your school.</em></p>
+            <button type="button" id="clear-form-btn" class="btn-clear">Clear Form & Start Over</button>
+        </div>
+
+        <form id="assessment-form">
+            <!-- Section 1: Assessment Information -->
+            <section>
+                <h2>Assessment Information</h2>
+
+                <div class="field">
+                    <label for="school">School <span class="required">*</span></label>
+                    <select id="school" name="schoolId" required>
+                        <option value="">Select a school...</option>
+                        <!-- temp school list -->
+                        <option value="iDontKnowTheID">Southwest Elementary</option>
+                        <option value="stillDontKnowIt">Githens Middle</option>
+                        <!-- Schools will be injected by build script -->
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="assessment-date">Assessment Date <span class="required">*</span></label>
+                    <input type="date" id="assessment-date" name="assessmentDate" required>
+                </div>
+
+                <div id="submitters-container">
+                    <h3>Completed By <span class="required">*</span></h3>
+                    <!-- Submitter blocks will be added dynamically -->
+                </div>
+
+                <button type="button" id="add-submitter" class="btn-add">
+                    + Add Another Person
+                </button>
+            </section>
+
+            <!-- Section 2: Current State of Pantry -->
+            <section>
+                <h2>Current State of Pantry</h2>
+
+                <!-- Group: Pantry basics -->
+                <div class="question-group">
+                    <div class="field">
+                        <label>What type of pantries does the school offer?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pantry-type-food" name="pantryTypes" value="Food">
+                                <label for="pantry-type-food">Food</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pantry-type-household" name="pantryTypes" value="Household essentials">
+                                <label for="pantry-type-household">Household essentials</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pantry-type-hygiene" name="pantryTypes" value="Hygiene products and toiletries">
+                                <label for="pantry-type-hygiene">Hygiene products and toiletries</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pantry-type-clothing" name="pantryTypes" value="Clothing">
+                                <label for="pantry-type-clothing">Clothing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pantry-type-other" name="pantryTypes" value="Other">
+                                <label for="pantry-type-other">Other</label>
+                            </div>
+                            <div class="checkbox-other">
+                                <input type="text" id="pantry-type-other-text" name="pantryTypesOther" placeholder="Please specify...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="storage-description">How are pantry items being stored now, and how much space does the school pantry have?</label>
+                        <span class="help-text">Please describe the storage setup. Are different pantry categories stored together or separately?</span>
+                        <textarea id="storage-description" name="storageDescription"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label>How are the pantries stocked?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-food-drives" name="stockingMethods" value="Food drives">
+                                <label for="stocking-food-drives">Food drives</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-clothing-drives" name="stockingMethods" value="Clothing drives">
+                                <label for="stocking-clothing-drives">Clothing drives</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-monetary" name="stockingMethods" value="Monetary donations">
+                                <label for="stocking-monetary">Monetary donations</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-business" name="stockingMethods" value="Business/organization donations">
+                                <label for="stocking-business">Business/organization donations</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-online" name="stockingMethods" value="Online shopping requests">
+                                <label for="stocking-online">Online shopping requests</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stocking-other" name="stockingMethods" value="Other">
+                                <label for="stocking-other">Other</label>
+                            </div>
+                            <div class="checkbox-other">
+                                <input type="text" id="stocking-other-text" name="stockingMethodsOther" placeholder="Please specify...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group: Management -->
+                <div class="question-group">
+                    <div class="field">
+                        <label for="pantry-management">Who manages the pantry, or pantries, within the school?</label>
+                        <span class="help-text">Please discuss together and address the following points:<br>
+                        • Who are the people (school staff or parent/community volunteers) monitoring pantry stock/inventory, scheduling drives, sorting and storing donations, identifying students and families that need supports, preparing/packing items, and delivering supports?<br>
+                        • Are the same people managing multiple inventories, or are different resource needs dispersed through the school?<br>
+                        • Consider different pantry categories as well as different stages of the process. Who interacts with the pantry the most?</span>
+                        <textarea id="pantry-management" name="pantryManagement"></textarea>
+                    </div>
+                </div>
+
+                <!-- Group: Distribution -->
+                <div class="question-group">
+                    <div class="field">
+                        <label for="families-served">How many families does the school pantry serve?</label>
+                        <input type="number" id="families-served" name="familiesServed" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="access-process">How do families get access to the school pantry resources?</label>
+                        <span class="help-text">Please describe: Is there a selection or identification process the school uses? Does each family receive the same level of support, or does the pantry fill different roles for different families?</span>
+                        <textarea id="access-process" name="accessProcess"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="distribution-schedule">What is the current distribution schedule (or frequency)?</label>
+                        <span class="help-text">Does the distribution frequency differ among types of support (e.g., food vs. clothing)?</span>
+                        <textarea id="distribution-schedule" name="distributionSchedule"></textarea>
+                    </div>
+                </div>
+
+                <!-- Group: McKinney-Vento -->
+                <div class="question-group">
+                    <div class="field">
+                        <label for="mckinney-vento-count">How many McKinney-Vento students does the school have?</label>
+                        <span class="help-text">McKinney-Vento students are those experiencing homelessness</span>
+                        <input type="number" id="mckinney-vento-count" name="mcKinneyVentoCount" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="mckinney-vento-needs">What needs should we keep in mind to support McKinney-Vento students?</label>
+                        <textarea id="mckinney-vento-needs" name="mcKinneyVentoNeeds"></textarea>
+                    </div>
+                </div>
+
+                <!-- Group: Capacity planning -->
+                <div class="question-group">
+                    <div class="field">
+                        <label for="peak-capacity">At peak capacity, how many families does the school support throughout the year?</label>
+                        <span class="help-text">Pantry usage fluctuates throughout the year. What's the highest number of families served during peak times?</span>
+                        <input type="number" id="peak-capacity" name="peakCapacity" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="buffer-needed">What kind of buffer would help the pantry best serve the school?</label>
+                        <span class="help-text">From the pantry administrators' perspective, what extra capacity or resources would provide an appropriate safety margin?</span>
+                        <textarea id="buffer-needed" name="bufferNeeded"></textarea>
+                    </div>
+                </div>
+
+                <!-- Group: Challenges -->
+                <div class="question-group">
+                    <div class="field">
+                        <label for="current-limitations">What limitations or constraints impact the school pantry now? What's the biggest problem at this particular pantry?</label>
+                        <textarea id="current-limitations" name="currentLimitations"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="general-notes">Additional notes about current pantry state</label>
+                        <span class="help-text">Any other important context or details about how the pantry currently operates?</span>
+                        <textarea id="general-notes" name="generalNotes"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Existing Partnerships -->
+            <section>
+                <h2>Existing Partnerships</h2>
+
+                <div class="field">
+                    <label for="school-organizations">Are there any school-based organizations (PTA or similar) that collaborate or contribute to the school pantry?</label>
+                    <span class="help-text">Consider: inventory management, donations, food and clothing drives, funding, etc.</span>
+                    <textarea id="school-organizations" name="schoolOrganizations"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="food-security-partnerships">Does the school have partnerships with any food security organizations in the community to source donations or fund its food pantry?</label>
+                    <span class="help-text">Examples: pantries, gardens/farms, food distribution programs</span>
+                    <textarea id="food-security-partnerships" name="foodSecurityPartnerships"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="business-partnerships">Does the school have partnerships with any local businesses or restaurants?</label>
+                    <span class="help-text">Examples: catering, fundraisers, donations</span>
+                    <textarea id="business-partnerships" name="businessPartnerships"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="external-referrals">What organizations or resources does the school refer families to when the school pantry cannot meet community needs?</label>
+                    <span class="help-text">Where does the school direct families for additional food and clothing aid?</span>
+                    <textarea id="external-referrals" name="externalReferrals"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="partnership-notes">Additional notes about partnerships</label>
+                    <span class="help-text">Any other important partnerships, collaborations, or community connections?</span>
+                    <textarea id="partnership-notes" name="partnershipNotes"></textarea>
+                </div>
+            </section>
+
+            <!-- Section 4: Follow-up -->
+            <section>
+                <h2>Follow-up</h2>
+
+                <div class="field">
+                    <label for="questions-clarifications">Questions or clarifications needed</label>
+                    <span class="help-text">Are there any questions you'd like the network team to follow up on, or areas where you need clarification?</span>
+                    <textarea id="questions-clarifications" name="questionsClarifications"></textarea>
+                </div>
+            </section>
+
+            <div class="actions">
+                <button type="submit" id="submit-btn" class="btn-primary">
+                    Submit Assessment
+                </button>
+            </div>
+        </form>
+
+        <div id="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2>Assessment Submitted Successfully!</h2>
+            <p>Thank you for completing this assessment. Your responses have been recorded and our team will review them shortly.</p>
+            <button id="submit-another" class="btn-primary" style="margin-top: 1.5rem;">Submit Another Assessment</button>
+        </div>
+
+        <div id="error-message" style="display: none;">
+            <div class="error-icon">✗</div>
+            <h2>Submission Failed</h2>
+            <p id="error-text">We couldn't submit your assessment. Please check your internet connection and try again. If the problem persists, contact support.</p>
+            <button id="try-again" class="btn-primary" style="margin-top: 1.5rem;">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'spn_assessment_draft';
+        let saveTimeout;
+        let submitterCount = 0;
+
+        // Initialize form
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved draft if it exists
+            loadSavedDraft();
+
+            // Set today's date as default if not already set
+            if (!document.getElementById('assessment-date').value) {
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('assessment-date').value = today;
+            }
+
+            // Add first submitter block if none exist
+            if (document.querySelectorAll('.submitter-block').length === 0) {
+                addSubmitterBlock();
+            }
+
+            // Event listeners
+            document.getElementById('add-submitter').addEventListener('click', addSubmitterBlock);
+            document.getElementById('assessment-form').addEventListener('submit', handleSubmit);
+            document.getElementById('submit-another').addEventListener('click', resetForm);
+            document.getElementById('clear-form-btn').addEventListener('click', handleClearForm);
+            document.getElementById('try-again').addEventListener('click', function() {
+                document.getElementById('error-message').style.display = 'none';
+                document.getElementById('assessment-form').style.display = 'block';
+            });
+
+            // Enable/disable "Other" text inputs based on checkbox state
+            setupCheckboxOtherFields();
+
+            // Setup auto-save on form changes
+            setupAutoSave();
+        });
+
+        function addSubmitterBlock() {
+            submitterCount++;
+            const container = document.getElementById('submitters-container');
+
+            const block = document.createElement('div');
+            block.className = 'submitter-block';
+            block.dataset.submitterId = submitterCount;
+
+            block.innerHTML = `
+                <div class="submitter-header">
+                    <span class="submitter-number">Person ${submitterCount}</span>
+                    <button type="button" class="btn-remove" onclick="removeSubmitterBlock(${submitterCount})">Remove</button>
+                </div>
+                <div class="field">
+                    <label for="submitter-${submitterCount}-name">Name <span class="required">*</span></label>
+                    <input type="text" id="submitter-${submitterCount}-name" name="submitterName" required>
+                </div>
+                <div class="field">
+                    <label for="submitter-${submitterCount}-role">Title/Role <span class="required">*</span></label>
+                    <input type="text" id="submitter-${submitterCount}-role" name="submitterRole" placeholder="e.g., Parent, School Social Worker, Counselor" required>
+                </div>
+                <div class="field">
+                    <label for="submitter-${submitterCount}-email">Email <span class="required">*</span></label>
+                    <input type="email" id="submitter-${submitterCount}-email" name="submitterEmail" required>
+                </div>
+                <div class="field">
+                    <label for="submitter-${submitterCount}-phone">Phone</label>
+                    <input type="tel" id="submitter-${submitterCount}-phone" name="submitterPhone">
+                </div>
+            `;
+
+            container.appendChild(block);
+            updateRemoveButtons();
+        }
+
+        function removeSubmitterBlock(id) {
+            const block = document.querySelector(`[data-submitter-id="${id}"]`);
+            if (block) {
+                block.remove();
+                updateRemoveButtons();
+                renumberSubmitters();
+            }
+        }
+
+        function updateRemoveButtons() {
+            const blocks = document.querySelectorAll('.submitter-block');
+            blocks.forEach(block => {
+                const removeBtn = block.querySelector('.btn-remove');
+                removeBtn.disabled = blocks.length === 1;
+            });
+        }
+
+        function renumberSubmitters() {
+            const blocks = document.querySelectorAll('.submitter-block');
+            blocks.forEach((block, index) => {
+                const number = block.querySelector('.submitter-number');
+                number.textContent = `Person ${index + 1}`;
+            });
+        }
+
+        function setupCheckboxOtherFields() {
+            // Pantry types
+            const pantryTypeOther = document.getElementById('pantry-type-other');
+            const pantryTypeOtherText = document.getElementById('pantry-type-other-text');
+            pantryTypeOtherText.disabled = !pantryTypeOther.checked;
+
+            pantryTypeOther.addEventListener('change', function() {
+                pantryTypeOtherText.disabled = !this.checked;
+                if (!this.checked) {
+                    pantryTypeOtherText.value = '';
+                }
+            });
+
+            // Stocking methods
+            const stockingOther = document.getElementById('stocking-other');
+            const stockingOtherText = document.getElementById('stocking-other-text');
+            stockingOtherText.disabled = !stockingOther.checked;
+
+            stockingOther.addEventListener('change', function() {
+                stockingOtherText.disabled = !this.checked;
+                if (!this.checked) {
+                    stockingOtherText.value = '';
+                }
+            });
+        }
+
+        function getCheckboxValues(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            const values = Array.from(checkboxes).map(cb => cb.value);
+
+            // Handle "Other" option
+            if (name === 'pantryTypes' && values.includes('Other')) {
+                const otherText = document.getElementById('pantry-type-other-text').value.trim();
+                if (otherText) {
+                    values[values.indexOf('Other')] = `Other: ${otherText}`;
+                }
+            } else if (name === 'stockingMethods' && values.includes('Other')) {
+                const otherText = document.getElementById('stocking-other-text').value.trim();
+                if (otherText) {
+                    values[values.indexOf('Other')] = `Other: ${otherText}`;
+                }
+            }
+
+            return values;
+        }
+
+        function getSubmitters() {
+            const blocks = document.querySelectorAll('.submitter-block');
+            const submitters = [];
+
+            blocks.forEach(block => {
+                const id = block.dataset.submitterId;
+                submitters.push({
+                    name: document.getElementById(`submitter-${id}-name`).value.trim(),
+                    role: document.getElementById(`submitter-${id}-role`).value.trim(),
+                    email: document.getElementById(`submitter-${id}-email`).value.trim(),
+                    phone: document.getElementById(`submitter-${id}-phone`).value.trim() || null
+                });
+            });
+
+            return submitters;
+        }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Disable form
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading-spinner"></span>Submitting...';
+
+            // Collect form data
+            const formData = {
+                schoolId: document.getElementById('school').value,
+                assessmentDate: document.getElementById('assessment-date').value,
+                submitters: getSubmitters(),
+                hasExistingPantry: true, // Assumed true if filling out assessment
+                pantryTypes: getCheckboxValues('pantryTypes'),
+                storageDescription: document.getElementById('storage-description').value.trim() || null,
+                pantryManagement: document.getElementById('pantry-management').value.trim() || null,
+                familiesServed: parseInt(document.getElementById('families-served').value) || null,
+                accessProcess: document.getElementById('access-process').value.trim() || null,
+                stockingMethods: getCheckboxValues('stockingMethods'),
+                distributionSchedule: document.getElementById('distribution-schedule').value.trim() || null,
+                mcKinneyVentoCount: parseInt(document.getElementById('mckinney-vento-count').value) || null,
+                mcKinneyVentoNeeds: document.getElementById('mckinney-vento-needs').value.trim() || null,
+                peakCapacity: parseInt(document.getElementById('peak-capacity').value) || null,
+                bufferNeeded: document.getElementById('buffer-needed').value.trim() || null,
+                currentLimitations: document.getElementById('current-limitations').value.trim() || null,
+                generalNotes: document.getElementById('general-notes').value.trim() || null,
+                schoolOrganizations: document.getElementById('school-organizations').value.trim() || null,
+                foodSecurityPartnerships: document.getElementById('food-security-partnerships').value.trim() || null,
+                businessPartnerships: document.getElementById('business-partnerships').value.trim() || null,
+                externalReferrals: document.getElementById('external-referrals').value.trim() || null,
+                partnershipNotes: document.getElementById('partnership-notes').value.trim() || null,
+                questionsClarifications: document.getElementById('questions-clarifications').value.trim() || null
+            };
+
+            try {
+                // Submit to API
+                /*
+                const response = await fetch('https://admin.schoolpantry.network/api/submit-assessment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Submission failed');
+                }
+                */
+
+                console.log({formData});
+
+                // Clear saved draft on successful submission
+                clearSavedDraft();
+
+                // Show success message
+                document.getElementById('assessment-form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                window.scrollTo(0, 0);
+
+            } catch (error) {
+                console.error('Submission error:', error);
+
+                // Show error message
+                document.getElementById('assessment-form').style.display = 'none';
+                document.getElementById('error-message').style.display = 'block';
+                window.scrollTo(0, 0);
+            } finally {
+                // Re-enable form
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Assessment';
+            }
+        }
+
+        function resetForm() {
+            // Clear saved draft and reload
+            clearSavedDraft();
+            window.location.reload();
+        }
+
+        function handleClearForm() {
+            if (confirm('Are you sure you want to clear the form and start over? This will delete your saved draft.')) {
+                clearSavedDraft();
+
+                // Clear all form fields manually
+                document.getElementById('assessment-form').reset();
+
+                // Clear checkboxes explicitly
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+
+                // Disable "Other" text inputs
+                document.getElementById('pantry-type-other-text').value = '';
+                document.getElementById('pantry-type-other-text').disabled = true;
+                document.getElementById('stocking-other-text').value = '';
+                document.getElementById('stocking-other-text').disabled = true;
+
+                // Reset submitter blocks to just one
+                document.querySelectorAll('.submitter-block').forEach(block => block.remove());
+                submitterCount = 0;
+                addSubmitterBlock();
+
+                // Reset date to today
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('assessment-date').value = today;
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Auto-save functionality
+        function setupAutoSave() {
+            const form = document.getElementById('assessment-form');
+
+            // Debounced save on any input change
+            form.addEventListener('input', function() {
+                clearTimeout(saveTimeout);
+                saveTimeout = setTimeout(saveFormDraft, 500);
+            });
+
+            // Save immediately on checkbox change
+            form.addEventListener('change', function(e) {
+                if (e.target.type === 'checkbox') {
+                    saveFormDraft();
+                }
+            });
+        }
+
+        function saveFormDraft() {
+            const draft = {
+                timestamp: new Date().toISOString(),
+                schoolId: document.getElementById('school').value,
+                assessmentDate: document.getElementById('assessment-date').value,
+                submitters: getSubmittersForSave(),
+                pantryTypes: getCheckboxValuesForSave('pantryTypes'),
+                pantryTypesOther: document.getElementById('pantry-type-other-text').value,
+                storageDescription: document.getElementById('storage-description').value,
+                stockingMethods: getCheckboxValuesForSave('stockingMethods'),
+                stockingMethodsOther: document.getElementById('stocking-other-text').value,
+                pantryManagement: document.getElementById('pantry-management').value,
+                familiesServed: document.getElementById('families-served').value,
+                accessProcess: document.getElementById('access-process').value,
+                distributionSchedule: document.getElementById('distribution-schedule').value,
+                mcKinneyVentoCount: document.getElementById('mckinney-vento-count').value,
+                mcKinneyVentoNeeds: document.getElementById('mckinney-vento-needs').value,
+                peakCapacity: document.getElementById('peak-capacity').value,
+                bufferNeeded: document.getElementById('buffer-needed').value,
+                currentLimitations: document.getElementById('current-limitations').value,
+                generalNotes: document.getElementById('general-notes').value,
+                schoolOrganizations: document.getElementById('school-organizations').value,
+                foodSecurityPartnerships: document.getElementById('food-security-partnerships').value,
+                businessPartnerships: document.getElementById('business-partnerships').value,
+                externalReferrals: document.getElementById('external-referrals').value,
+                partnershipNotes: document.getElementById('partnership-notes').value,
+                questionsClarifications: document.getElementById('questions-clarifications').value
+            };
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+            showSaveIndicator();
+        }
+
+        function getSubmittersForSave() {
+            const blocks = document.querySelectorAll('.submitter-block');
+            const submitters = [];
+
+            blocks.forEach(block => {
+                const id = block.dataset.submitterId;
+                submitters.push({
+                    id: id,
+                    name: document.getElementById(`submitter-${id}-name`)?.value || '',
+                    role: document.getElementById(`submitter-${id}-role`)?.value || '',
+                    email: document.getElementById(`submitter-${id}-email`)?.value || '',
+                    phone: document.getElementById(`submitter-${id}-phone`)?.value || ''
+                });
+            });
+
+            return submitters;
+        }
+
+        function getCheckboxValuesForSave(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+            const values = [];
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    values.push(cb.value);
+                }
+            });
+            return values;
+        }
+
+        function loadSavedDraft() {
+            const savedData = localStorage.getItem(STORAGE_KEY);
+            if (!savedData) return;
+
+            try {
+                const draft = JSON.parse(savedData);
+
+                // Load basic fields
+                if (draft.schoolId) document.getElementById('school').value = draft.schoolId;
+                if (draft.assessmentDate) document.getElementById('assessment-date').value = draft.assessmentDate;
+
+                // Load submitters
+                if (draft.submitters && draft.submitters.length > 0) {
+                    draft.submitters.forEach((submitter, index) => {
+                        if (index === 0) {
+                            // First submitter block is auto-added, just populate it
+                            addSubmitterBlock();
+                        } else {
+                            addSubmitterBlock();
+                        }
+
+                        const block = document.querySelectorAll('.submitter-block')[index];
+                        if (block) {
+                            const id = block.dataset.submitterId;
+                            if (submitter.name) document.getElementById(`submitter-${id}-name`).value = submitter.name;
+                            if (submitter.role) document.getElementById(`submitter-${id}-role`).value = submitter.role;
+                            if (submitter.email) document.getElementById(`submitter-${id}-email`).value = submitter.email;
+                            if (submitter.phone) document.getElementById(`submitter-${id}-phone`).value = submitter.phone;
+                        }
+                    });
+                }
+
+                // Load checkboxes
+                if (draft.pantryTypes) {
+                    draft.pantryTypes.forEach(value => {
+                        const checkbox = document.querySelector(`input[name="pantryTypes"][value="${value}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+                if (draft.pantryTypesOther) {
+                    document.getElementById('pantry-type-other-text').value = draft.pantryTypesOther;
+                    document.getElementById('pantry-type-other-text').disabled = false;
+                }
+
+                if (draft.stockingMethods) {
+                    draft.stockingMethods.forEach(value => {
+                        const checkbox = document.querySelector(`input[name="stockingMethods"][value="${value}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+                if (draft.stockingMethodsOther) {
+                    document.getElementById('stocking-other-text').value = draft.stockingMethodsOther;
+                    document.getElementById('stocking-other-text').disabled = false;
+                }
+
+                // Load text fields
+                if (draft.storageDescription) document.getElementById('storage-description').value = draft.storageDescription;
+                if (draft.pantryManagement) document.getElementById('pantry-management').value = draft.pantryManagement;
+                if (draft.familiesServed) document.getElementById('families-served').value = draft.familiesServed;
+                if (draft.accessProcess) document.getElementById('access-process').value = draft.accessProcess;
+                if (draft.distributionSchedule) document.getElementById('distribution-schedule').value = draft.distributionSchedule;
+                if (draft.mcKinneyVentoCount) document.getElementById('mckinney-vento-count').value = draft.mcKinneyVentoCount;
+                if (draft.mcKinneyVentoNeeds) document.getElementById('mckinney-vento-needs').value = draft.mcKinneyVentoNeeds;
+                if (draft.peakCapacity) document.getElementById('peak-capacity').value = draft.peakCapacity;
+                if (draft.bufferNeeded) document.getElementById('buffer-needed').value = draft.bufferNeeded;
+                if (draft.currentLimitations) document.getElementById('current-limitations').value = draft.currentLimitations;
+                if (draft.generalNotes) document.getElementById('general-notes').value = draft.generalNotes;
+                if (draft.schoolOrganizations) document.getElementById('school-organizations').value = draft.schoolOrganizations;
+                if (draft.foodSecurityPartnerships) document.getElementById('food-security-partnerships').value = draft.foodSecurityPartnerships;
+                if (draft.businessPartnerships) document.getElementById('business-partnerships').value = draft.businessPartnerships;
+                if (draft.externalReferrals) document.getElementById('external-referrals').value = draft.externalReferrals;
+                if (draft.partnershipNotes) document.getElementById('partnership-notes').value = draft.partnershipNotes;
+                if (draft.questionsClarifications) document.getElementById('questions-clarifications').value = draft.questionsClarifications;
+
+                console.log('Draft loaded from', new Date(draft.timestamp).toLocaleString());
+            } catch (err) {
+                console.error('Failed to load draft:', err);
+            }
+        }
+
+        function clearSavedDraft() {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+
+        function showSaveIndicator() {
+            const indicator = document.getElementById('auto-save-status');
+            indicator.classList.add('show');
+            setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
