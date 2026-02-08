@@ -68,7 +68,8 @@ const state = {
   allMarkers: {},
   pins: [],
   map: null,
-  tileLayer: null
+  tileLayer: null,
+  useSidebar: false
 };
 
 // ── Color helpers ────────────────────────────────────────────────────────────
@@ -188,6 +189,12 @@ function createSchoolMarkers(data, type) {
       marker.schoolProps = feature.properties;
       marker.defaultRadius = radius;
       marker.bindPopup(buildPopup(feature, type), { maxWidth: 280 });
+      marker.on('click', function () {
+        if (state.useSidebar) {
+          marker.closePopup();
+          showSidebar(marker);
+        }
+      });
       markers.push(marker);
       state.allMarkers[feature.properties.name] = marker;
       marker.addTo(state.map);
@@ -576,7 +583,11 @@ function setupSearch() {
           state.map.flyTo(latlng, 15);
         }
       }
-      item.marker.openPopup();
+      if (state.useSidebar) {
+        showSidebar(item.marker);
+      } else {
+        item.marker.openPopup();
+      }
       clearSearch();
       input.blur();
     } else {
@@ -669,6 +680,38 @@ function setupSearch() {
   const clearBtn = document.getElementById('clear-pins');
   if (clearBtn) {
     clearBtn.addEventListener('click', clearAllPins);
+  }
+}
+
+// ── Sidebar ─────────────────────────────────────────────────────────────────
+
+function showSidebar(marker) {
+  const sidebar = document.getElementById('sidebar');
+  const content = document.getElementById('sidebar-content');
+  if (!sidebar || !content) return;
+
+  const html = buildPopup({ properties: marker.schoolProps }, marker.schoolType);
+  content.innerHTML = html;
+  sidebar.hidden = false;
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar) sidebar.hidden = true;
+}
+
+function setupSidebar() {
+  const toggle = document.getElementById('toggle-sidebar');
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      state.useSidebar = this.checked;
+      if (!this.checked) closeSidebar();
+    });
+  }
+
+  const closeBtn = document.getElementById('sidebar-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeSidebar);
   }
 }
 
@@ -806,6 +849,7 @@ async function init() {
   setupEventListeners();
   setupSearch();
   setupThemeSwitcher();
+  setupSidebar();
 
   // Ctrl+double-click to drop a pin
   state.map.on('dblclick', function (e) {

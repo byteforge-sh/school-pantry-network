@@ -46,6 +46,7 @@
       <div class="control-label">Search</div>
       <div class="toggle-group">
         <label><input type="checkbox" id="toggle-zoom-search" checked> Zoom to result</label>
+        <label><input type="checkbox" id="toggle-sidebar"> Info sidebar</label>
       </div>
     </div>
 
@@ -71,6 +72,11 @@
         <span class="slider-value" id="opacity-value">30%</span>
       </div>
     </div>
+  </div>
+
+  <div id="sidebar" class="sidebar" hidden>
+    <button class="sidebar-close" id="sidebar-close">&times;</button>
+    <div id="sidebar-content"></div>
   </div>
 
   <div id="legend"></div>
