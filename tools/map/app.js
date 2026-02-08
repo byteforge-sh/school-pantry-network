@@ -5,8 +5,8 @@ const MAP_ZOOM = 11;
 
 const REGION_COLORS = {
   'Central': '#e6b422',
-  'East': '#4ecdc4',
-  'North': '#ff6b6b',
+  'Eastern': '#4ecdc4',
+  'Northern': '#ff6b6b',
   'Southeast': '#a78bfa',
   'Southwest': '#f97316'
 };
