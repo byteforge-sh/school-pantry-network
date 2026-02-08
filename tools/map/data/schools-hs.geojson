@@ -6,6 +6,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8781550,
+          36.0376341
+        ]
+      },
+      "properties": {
+        "name": "Lakeview School",
+        "address": "3507 Dearborn Drive, Durham, NC 27704",
+        "dpsid": null,
+        "lat": 36.0376341,
+        "lng": -78.8781550,
+        "region": null,
+        "type": "High",
+        "calendar": null,
+        "program": null,
+        "grades": "6 to 12",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9023313,
           36.0382381
         ]
@@ -121,6 +144,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.9002882,
+          36.0472908
+        ]
+      },
+      "properties": {
+        "name": "Excelsior Classical Academy CFA",
+        "address": "4100 N Roxboro Street, Durham, NC 27704",
+        "dpsid": null,
+        "lat": 36.0472908,
+        "lng": -78.9002882,
+        "region": null,
+        "type": "Specialty",
+        "calendar": null,
+        "program": null,
+        "grades": "K to 12",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9635742,
           35.9245760
         ]
@@ -213,6 +259,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8876334,
+          36.1296246
+        ]
+      },
+      "properties": {
+        "name": "Discovery Charter School",
+        "address": "501 Orange Factory Road, Bahama, NC 27503",
+        "dpsid": null,
+        "lat": 36.1296246,
+        "lng": -78.8876334,
+        "region": null,
+        "type": "High",
+        "calendar": null,
+        "program": null,
+        "grades": "6 to 11",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.8795195,
           35.9896202
         ]
@@ -259,6 +328,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.9010233,
+          35.9134662
+        ]
+      },
+      "properties": {
+        "name": "North Carolina Cyber Academy",
+        "address": "2800 Meridian Parkway, Durham, NC 27713",
+        "dpsid": null,
+        "lat": 35.9134662,
+        "lng": -78.9010233,
+        "region": null,
+        "type": "Specialty",
+        "calendar": null,
+        "program": null,
+        "grades": "K to 12",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.8976857,
           35.9855791
         ]
@@ -297,6 +389,75 @@
         "calendar": "Traditional",
         "program": "Online/Virtual",
         "grades": "K to 12",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8930036,
+          35.9141188
+        ]
+      },
+      "properties": {
+        "name": "NC Virtual Academy",
+        "address": "4220 NC Highway 55, Durham, NC 27713",
+        "dpsid": null,
+        "lat": 35.9141188,
+        "lng": -78.8930036,
+        "region": null,
+        "type": "Specialty",
+        "calendar": null,
+        "program": null,
+        "grades": "K to 12",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7724435,
+          35.9730995
+        ]
+      },
+      "properties": {
+        "name": "Durham Charter School",
+        "address": "4621 Kemp Road, Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9730995,
+        "lng": -78.7724435,
+        "region": null,
+        "type": "Specialty",
+        "calendar": null,
+        "program": null,
+        "grades": "K to 11",
+        "cte": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8795195,
+          35.9896202
+        ]
+      },
+      "properties": {
+        "name": "Holton Career and Resource Center",
+        "address": "401 North Driver St, Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9896202,
+        "lng": -78.8795195,
+        "region": null,
+        "type": "High",
+        "calendar": null,
+        "program": null,
+        "grades": "9 to 12",
         "cte": null
       }
     }

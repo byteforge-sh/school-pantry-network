@@ -75,6 +75,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.9002882,
+          36.0472908
+        ]
+      },
+      "properties": {
+        "name": "Excelsior Classical Academy CFA",
+        "address": "4100 N Roxboro Street, Durham, NC 27704",
+        "dpsid": null,
+        "lat": 36.0472908,
+        "lng": -78.9002882,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.8789457,
           36.1712168
         ]
@@ -114,6 +137,29 @@
         "isp": null,
         "program": "Dual Language Instruction",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8809110,
+          35.9951416
+        ]
+      },
+      "properties": {
+        "name": "KIPP Durham College Preparatory",
+        "address": "1107 Holloway Street, Durham, NC 27701",
+        "dpsid": null,
+        "lat": 35.9951416,
+        "lng": -78.8809110,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
@@ -167,6 +213,52 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8509570,
+          35.8998572
+        ]
+      },
+      "properties": {
+        "name": "The Institute for the Development of Young Leaders",
+        "address": "4300 S. Miami Blvd., Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.8998572,
+        "lng": -78.8509570,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9009637,
+          36.0045325
+        ]
+      },
+      "properties": {
+        "name": "Central Park School for Children",
+        "address": "724 Foster Street, Durham, NC 27701",
+        "dpsid": null,
+        "lat": 36.0045325,
+        "lng": -78.9009637,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.8519514,
           36.0054223
         ]
@@ -183,6 +275,29 @@
         "isp": 55,
         "program": "Dual Language Instruction",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9010233,
+          35.9134662
+        ]
+      },
+      "properties": {
+        "name": "North Carolina Cyber Academy",
+        "address": "2800 Meridian Parkway, Durham, NC 27713",
+        "dpsid": null,
+        "lat": 35.9134662,
+        "lng": -78.9010233,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
@@ -236,6 +351,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.9019952,
+          35.9820457
+        ]
+      },
+      "properties": {
+        "name": "Whitted School",
+        "address": "1210 Sawyer Street, Durham, NC 27707",
+        "dpsid": null,
+        "lat": 35.9820457,
+        "lng": -78.9019952,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9082601,
           35.9320941
         ]
@@ -282,6 +420,52 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8518946,
+          35.9890675
+        ]
+      },
+      "properties": {
+        "name": "Reaching All Minds Academy",
+        "address": "2703 Holloway St., Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9890675,
+        "lng": -78.8518946,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8906613,
+          35.8984030
+        ]
+      },
+      "properties": {
+        "name": "Kestrel Heights School",
+        "address": "4700 South Alston Ave., Durham, NC 27713",
+        "dpsid": null,
+        "lat": 35.8984030,
+        "lng": -78.8906613,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9234453,
           35.9286642
         ]
@@ -298,6 +482,29 @@
         "isp": 39,
         "program": "Dual Language Instruction",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9132791,
+          36.0168456
+        ]
+      },
+      "properties": {
+        "name": "Global Scholars Academy",
+        "address": "1305 W Club Blvd, Durham, NC 27705",
+        "dpsid": null,
+        "lat": 36.0168456,
+        "lng": -78.9132791,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
@@ -420,6 +627,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8772672,
+          35.9852175
+        ]
+      },
+      "properties": {
+        "name": "Maureen Joy Charter School",
+        "address": "107 South Driver Street, Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9852175,
+        "lng": -78.8772672,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.8636214,
           36.0986266
         ]
@@ -443,6 +673,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8930036,
+          35.9141188
+        ]
+      },
+      "properties": {
+        "name": "NC Virtual Academy",
+        "address": "4220 NC Highway 55, Durham, NC 27713",
+        "dpsid": null,
+        "lat": 35.9141188,
+        "lng": -78.8930036,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9062514,
           35.8914633
         ]
@@ -459,6 +712,29 @@
         "isp": 42,
         "program": "No choice program",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9553305,
+          35.9812357
+        ]
+      },
+      "properties": {
+        "name": "Community School of Digital and Visual Arts",
+        "address": "1955 West Cornwallis Road, Durham, NC 27705",
+        "dpsid": null,
+        "lat": 35.9812357,
+        "lng": -78.9553305,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
@@ -528,6 +804,29 @@
         "isp": 55,
         "program": "No choice program",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7724435,
+          35.9730995
+        ]
+      },
+      "properties": {
+        "name": "Durham Charter School",
+        "address": "4621 Kemp Road, Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9730995,
+        "lng": -78.7724435,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
@@ -666,6 +965,29 @@
         "isp": 15,
         "program": "Year-Round",
         "calendar": "Year-Round"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8505295,
+          35.9366689
+        ]
+      },
+      "properties": {
+        "name": "Research Triangle Charter Academy",
+        "address": "2418 Ellis Road, Durham, NC 27703",
+        "dpsid": null,
+        "lat": 35.9366689,
+        "lng": -78.8505295,
+        "region": null,
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": null,
+        "calendar": null
       }
     },
     {
