@@ -13,7 +13,7 @@
   <div class="header">
     <a href="https://schoolpantry.network">School Pantry Network</a>
     <div class="search-wrap">
-      <input type="text" id="school-search" placeholder="Search schools…" autocomplete="off">
+      <input type="text" id="school-search" placeholder="Search schools or address…" autocomplete="off">
       <div id="search-results" class="search-results" hidden></div>
     </div>
     <span class="title">District Map</span>
@@ -45,8 +45,13 @@
     <div class="control-section">
       <div class="control-label">Search</div>
       <div class="toggle-group">
-        <label><input type="checkbox" id="toggle-zoom-search" checked> Zoom to school</label>
+        <label><input type="checkbox" id="toggle-zoom-search" checked> Zoom to result</label>
       </div>
+    </div>
+
+    <div class="control-section" id="pins-section" hidden>
+      <div class="control-label">Pins <span id="pin-count" class="pin-count"></span></div>
+      <button class="clear-pins-btn" id="clear-pins">Clear all</button>
     </div>
 
     <div class="control-section">

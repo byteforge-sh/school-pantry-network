@@ -340,6 +340,79 @@ html, body {
   flex-shrink: 0;
 }
 
+/* ── Pin controls ── */
+.pin-count {
+  font-size: 0.65rem;
+  color: #8bc48a;
+  font-weight: 400;
+}
+
+.clear-pins-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 107, 107, 0.4);
+  color: #ff6b6b;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.clear-pins-btn:hover {
+  background: rgba(255, 107, 107, 0.15);
+  border-color: #ff6b6b;
+}
+
+/* ── Pin popup ── */
+.pin-popup-address {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #8bc48a;
+  margin-bottom: 6px;
+}
+
+.pin-popup-label-input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(90, 154, 88, 0.3);
+  border-radius: 3px;
+  color: #e8e8e8;
+  font-size: 0.75rem;
+  padding: 3px 6px;
+  width: 100%;
+  outline: none;
+  margin-bottom: 6px;
+}
+
+.pin-popup-label-input::placeholder {
+  color: #666;
+}
+
+.pin-popup-label-input:focus {
+  border-color: #5a9a58;
+}
+
+.pin-popup-remove {
+  color: #ff6b6b;
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.pin-popup-remove:hover {
+  color: #ff8a8a;
+}
+
+/* ── Search address item ── */
+.search-result-item.search-address-item {
+  border-top: 1px solid rgba(90, 154, 88, 0.2);
+  color: #8bc48a;
+  font-style: italic;
+}
+
 /* ── Attribution ── */
 .leaflet-control-attribution {
   font-size: 0.6rem;

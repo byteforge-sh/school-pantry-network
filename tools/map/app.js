@@ -43,6 +43,7 @@ const state = {
   msMarkers: [],
   hsMarkers: [],
   allMarkers: {},
+  pins: [],
   map: null
 };
 
@@ -396,6 +397,102 @@ function legendItem(color, label) {
   return `<div class="legend-item"><span class="legend-swatch" style="background:${color}"></span>${label}</div>`;
 }
 
+// ── Geocoding ────────────────────────────────────────────────────────────────
+
+async function geocodeAddress(query) {
+  const params = new URLSearchParams({
+    q: query,
+    format: 'json',
+    limit: '1',
+    countrycodes: 'us',
+    viewbox: '-79.1,35.85,-78.7,36.15',
+    bounded: '0'
+  });
+  const resp = await fetch(`https://nominatim.openstreetmap.org/search?${params}`, {
+    headers: { 'User-Agent': 'SchoolPantryNetwork/1.0 (schoolpantry.network)' }
+  });
+  if (!resp.ok) return null;
+  const results = await resp.json();
+  if (!results.length) return null;
+  return {
+    lat: parseFloat(results[0].lat),
+    lng: parseFloat(results[0].lon),
+    display: results[0].display_name
+  };
+}
+
+// ── Pins ─────────────────────────────────────────────────────────────────────
+
+function buildPinPopup(pin) {
+  const div = document.createElement('div');
+
+  const addr = document.createElement('div');
+  addr.className = 'pin-popup-address';
+  addr.textContent = pin.address;
+  div.appendChild(addr);
+
+  const labelInput = document.createElement('input');
+  labelInput.type = 'text';
+  labelInput.className = 'pin-popup-label-input';
+  labelInput.placeholder = 'Add a label…';
+  labelInput.value = pin.label || '';
+  labelInput.addEventListener('input', function () {
+    pin.label = this.value;
+  });
+  div.appendChild(labelInput);
+
+  const remove = document.createElement('button');
+  remove.className = 'pin-popup-remove';
+  remove.textContent = 'Remove pin';
+  remove.addEventListener('click', function () {
+    removePin(pin);
+  });
+  div.appendChild(remove);
+
+  return div;
+}
+
+function addPin(latlng, address) {
+  const pin = {
+    marker: null,
+    label: '',
+    latlng: latlng,
+    address: address
+  };
+
+  pin.marker = L.marker(latlng).addTo(state.map);
+  pin.marker.bindPopup(buildPinPopup(pin), { maxWidth: 280 });
+  pin.marker.openPopup();
+
+  state.pins.push(pin);
+  updatePinsUI();
+}
+
+function removePin(pin) {
+  state.map.removeLayer(pin.marker);
+  state.pins = state.pins.filter(p => p !== pin);
+  updatePinsUI();
+}
+
+function clearAllPins() {
+  state.pins.forEach(p => state.map.removeLayer(p.marker));
+  state.pins = [];
+  updatePinsUI();
+}
+
+function updatePinsUI() {
+  const section = document.getElementById('pins-section');
+  const countEl = document.getElementById('pin-count');
+  if (!section) return;
+
+  if (state.pins.length === 0) {
+    section.hidden = true;
+  } else {
+    section.hidden = false;
+    if (countEl) countEl.textContent = `(${state.pins.length})`;
+  }
+}
+
 // ── Search ───────────────────────────────────────────────────────────────────
 
 function setupSearch() {
@@ -404,21 +501,32 @@ function setupSearch() {
   if (!input || !resultsEl) return;
 
   let activeIdx = -1;
-  let matches = [];
+  let items = []; // { type: 'school'|'address', name, marker?, query? }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function showResults(items) {
-    matches = items;
+  function showResults(schoolHits, query) {
+    items = schoolHits.map(h => ({ type: 'school', name: h.name, marker: h.marker }));
+
+    // Append address geocode option if query is 3+ chars
+    if (query.length >= 3) {
+      items.push({ type: 'address', name: query });
+    }
+
     activeIdx = -1;
     if (!items.length) {
       resultsEl.hidden = true;
       return;
     }
+
     resultsEl.innerHTML = items.map((item, i) => {
-      const typeLabel = item.marker.schoolType === 'es' ? 'ES' :
-        item.marker.schoolType === 'ms' ? 'MS' : 'HS';
-      return `<div class="search-result-item" data-index="${i}">${item.name}<span class="search-result-type">${typeLabel}</span></div>`;
+      if (item.type === 'school') {
+        const typeLabel = item.marker.schoolType === 'es' ? 'ES' :
+          item.marker.schoolType === 'ms' ? 'MS' : 'HS';
+        return `<div class="search-result-item" data-index="${i}">${item.name}<span class="search-result-type">${typeLabel}</span></div>`;
+      } else {
+        return `<div class="search-result-item search-address-item" data-index="${i}">Search address: ${item.name}</div>`;
+      }
     }).join('');
     resultsEl.hidden = false;
   }
@@ -426,28 +534,55 @@ function setupSearch() {
   function clearSearch() {
     input.value = '';
     resultsEl.hidden = true;
-    matches = [];
+    items = [];
     activeIdx = -1;
   }
 
-  function selectResult(idx) {
-    if (idx < 0 || idx >= matches.length) return;
-    const marker = matches[idx].marker;
-    const latlng = marker.getLatLng();
+  async function selectResult(idx) {
+    if (idx < 0 || idx >= items.length) return;
+    const item = items[idx];
     const zoomToggle = document.getElementById('toggle-zoom-search');
     const shouldZoom = zoomToggle ? zoomToggle.checked : true;
 
-    if (shouldZoom) {
-      if (prefersReducedMotion) {
-        state.map.setView(latlng, 15);
-      } else {
-        state.map.flyTo(latlng, 15);
+    if (item.type === 'school') {
+      const latlng = item.marker.getLatLng();
+      if (shouldZoom) {
+        if (prefersReducedMotion) {
+          state.map.setView(latlng, 15);
+        } else {
+          state.map.flyTo(latlng, 15);
+        }
+      }
+      item.marker.openPopup();
+      clearSearch();
+      input.blur();
+    } else {
+      // Address geocode
+      const query = item.name;
+      clearSearch();
+      input.blur();
+
+      const result = await geocodeAddress(query);
+      if (!result) {
+        input.value = query;
+        input.placeholder = 'Address not found — try again';
+        setTimeout(() => { input.placeholder = 'Search schools or address…'; }, 2000);
+        return;
+      }
+
+      const latlng = L.latLng(result.lat, result.lng);
+      // Use shorter address: first two parts of display_name
+      const shortAddr = result.display.split(',').slice(0, 2).join(',').trim();
+      addPin(latlng, shortAddr);
+
+      if (shouldZoom) {
+        if (prefersReducedMotion) {
+          state.map.setView(latlng, 16);
+        } else {
+          state.map.flyTo(latlng, 16);
+        }
       }
     }
-
-    marker.openPopup();
-    clearSearch();
-    input.blur();
   }
 
   input.addEventListener('input', function () {
@@ -463,7 +598,7 @@ function setupSearch() {
       }
     }
     hits.sort((a, b) => a.name.localeCompare(b.name));
-    showResults(hits.slice(0, 12));
+    showResults(hits.slice(0, 10), q);
   });
 
   input.addEventListener('keydown', function (e) {
@@ -472,11 +607,11 @@ function setupSearch() {
       input.blur();
       return;
     }
-    if (!matches.length) return;
+    if (!items.length) return;
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      activeIdx = Math.min(activeIdx + 1, matches.length - 1);
+      activeIdx = Math.min(activeIdx + 1, items.length - 1);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       activeIdx = Math.max(activeIdx - 1, 0);
@@ -484,7 +619,7 @@ function setupSearch() {
       e.preventDefault();
       if (activeIdx >= 0) {
         selectResult(activeIdx);
-      } else if (matches.length === 1) {
+      } else if (items.length === 1) {
         selectResult(0);
       }
       return;
@@ -506,6 +641,12 @@ function setupSearch() {
       resultsEl.hidden = true;
     }
   });
+
+  // Clear all pins button
+  const clearBtn = document.getElementById('clear-pins');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', clearAllPins);
+  }
 }
 
 // ── Event listeners ──────────────────────────────────────────────────────────
@@ -615,6 +756,13 @@ async function init() {
   // Set up controls
   setupEventListeners();
   setupSearch();
+
+  // Ctrl+double-click to drop a pin
+  state.map.on('dblclick', function (e) {
+    if (!e.originalEvent.ctrlKey && !e.originalEvent.metaKey) return;
+    e.originalEvent.preventDefault();
+    addPin(e.latlng, `${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)}`);
+  });
 
   // Apply default view
   applyViewMode();
