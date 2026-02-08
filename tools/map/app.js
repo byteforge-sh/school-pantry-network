@@ -396,6 +396,118 @@ function legendItem(color, label) {
   return `<div class="legend-item"><span class="legend-swatch" style="background:${color}"></span>${label}</div>`;
 }
 
+// ── Search ───────────────────────────────────────────────────────────────────
+
+function setupSearch() {
+  const input = document.getElementById('school-search');
+  const resultsEl = document.getElementById('search-results');
+  if (!input || !resultsEl) return;
+
+  let activeIdx = -1;
+  let matches = [];
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function showResults(items) {
+    matches = items;
+    activeIdx = -1;
+    if (!items.length) {
+      resultsEl.hidden = true;
+      return;
+    }
+    resultsEl.innerHTML = items.map((item, i) => {
+      const typeLabel = item.marker.schoolType === 'es' ? 'ES' :
+        item.marker.schoolType === 'ms' ? 'MS' : 'HS';
+      return `<div class="search-result-item" data-index="${i}">${item.name}<span class="search-result-type">${typeLabel}</span></div>`;
+    }).join('');
+    resultsEl.hidden = false;
+  }
+
+  function clearSearch() {
+    input.value = '';
+    resultsEl.hidden = true;
+    matches = [];
+    activeIdx = -1;
+  }
+
+  function selectResult(idx) {
+    if (idx < 0 || idx >= matches.length) return;
+    const marker = matches[idx].marker;
+    const latlng = marker.getLatLng();
+    const zoomToggle = document.getElementById('toggle-zoom-search');
+    const shouldZoom = zoomToggle ? zoomToggle.checked : true;
+
+    if (shouldZoom) {
+      if (prefersReducedMotion) {
+        state.map.setView(latlng, 15);
+      } else {
+        state.map.flyTo(latlng, 15);
+      }
+    }
+
+    marker.openPopup();
+    clearSearch();
+    input.blur();
+  }
+
+  input.addEventListener('input', function () {
+    const q = this.value.trim().toLowerCase();
+    if (q.length < 2) {
+      resultsEl.hidden = true;
+      return;
+    }
+    const hits = [];
+    for (const [name, marker] of Object.entries(state.allMarkers)) {
+      if (name.toLowerCase().includes(q)) {
+        hits.push({ name, marker });
+      }
+    }
+    hits.sort((a, b) => a.name.localeCompare(b.name));
+    showResults(hits.slice(0, 12));
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      clearSearch();
+      input.blur();
+      return;
+    }
+    if (!matches.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, matches.length - 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, 0);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (activeIdx >= 0) {
+        selectResult(activeIdx);
+      } else if (matches.length === 1) {
+        selectResult(0);
+      }
+      return;
+    }
+
+    resultsEl.querySelectorAll('.search-result-item').forEach((el, i) => {
+      el.classList.toggle('active', i === activeIdx);
+    });
+  });
+
+  resultsEl.addEventListener('click', function (e) {
+    const item = e.target.closest('.search-result-item');
+    if (!item) return;
+    selectResult(parseInt(item.dataset.index));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.search-wrap')) {
+      resultsEl.hidden = true;
+    }
+  });
+}
+
 // ── Event listeners ──────────────────────────────────────────────────────────
 
 function setupEventListeners() {
@@ -502,6 +614,7 @@ async function init() {
 
   // Set up controls
   setupEventListeners();
+  setupSearch();
 
   // Apply default view
   applyViewMode();

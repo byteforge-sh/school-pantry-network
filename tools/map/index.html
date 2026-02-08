@@ -12,6 +12,10 @@
 
   <div class="header">
     <a href="https://schoolpantry.network">School Pantry Network</a>
+    <div class="search-wrap">
+      <input type="text" id="school-search" placeholder="Search schools…" autocomplete="off">
+      <div id="search-results" class="search-results" hidden></div>
+    </div>
     <span class="title">District Map</span>
   </div>
 
@@ -35,6 +39,13 @@
         <label><input type="checkbox" id="toggle-es"> Elementary</label>
         <label><input type="checkbox" id="toggle-ms"> Middle School</label>
         <label><input type="checkbox" id="toggle-hs"> High School</label>
+      </div>
+    </div>
+
+    <div class="control-section">
+      <div class="control-label">Search</div>
+      <div class="toggle-group">
+        <label><input type="checkbox" id="toggle-zoom-search" checked> Zoom to school</label>
       </div>
     </div>
 
