@@ -31,6 +31,29 @@ const PROGRAM_COLORS = {
 
 const SCHOOL_RADIUS = { es: 7, ms: 8, hs: 9 };
 
+const BASEMAPS = {
+  dark: {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd'
+  },
+  streets: {
+    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd'
+  },
+  light: {
+    url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd'
+  },
+  satellite: {
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    attribution: '&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Source: Esri, Maxar, Earthstar Geographics',
+    subdomains: null
+  }
+};
+
 // ── State ────────────────────────────────────────────────────────────────────
 
 const state = {
@@ -44,7 +67,8 @@ const state = {
   hsMarkers: [],
   allMarkers: {},
   pins: [],
-  map: null
+  map: null,
+  tileLayer: null
 };
 
 // ── Color helpers ────────────────────────────────────────────────────────────
@@ -96,7 +120,7 @@ function buildPopup(school, type) {
 
   if (type === 'es') {
     html += '<div class="popup-section">';
-    if (p.isp) html += `<div class="popup-row"><span class="popup-label">ISP</span><span class="popup-highlight">${p.isp}</span></div>`;
+    if (p.isp) html += `<div class="popup-row"><span class="popup-label">ISP</span><span class="popup-highlight">${p.isp}%</span></div>`;
     if (p.capacity) html += `<div class="popup-row"><span class="popup-label">Capacity</span><span class="popup-value">${p.capacity}</span></div>`;
     if (p.enrollment) html += `<div class="popup-row"><span class="popup-label">Enrollment</span><span class="popup-value">${p.enrollment}</span></div>`;
     if (p.capacity && p.enrollment) {
@@ -109,7 +133,6 @@ function buildPopup(school, type) {
 
   if (type === 'hs') {
     if (p.cte) html += `<div class="popup-row"><span class="popup-label">CTE</span><span class="popup-value">${p.cte}</span></div>`;
-    if (p.jrotc) html += `<div class="popup-row"><span class="popup-label">JROTC</span><span class="popup-value">${p.jrotc}</span></div>`;
   }
 
   if (p.grades) html += `<div class="popup-row"><span class="popup-label">Grades</span><span class="popup-value">${p.grades}</span></div>`;
@@ -649,6 +672,31 @@ function setupSearch() {
   }
 }
 
+// ── Theme switcher ──────────────────────────────────────────────────────────
+
+function setupThemeSwitcher() {
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const theme = this.dataset.theme;
+      const basemap = BASEMAPS[theme];
+      if (!basemap) return;
+
+      state.map.removeLayer(state.tileLayer);
+      state.tileLayer = L.tileLayer(basemap.url, {
+        attribution: basemap.attribution,
+        subdomains: basemap.subdomains || '',
+        maxZoom: 19
+      }).addTo(state.map);
+
+      // Keep tile layer behind everything else
+      state.tileLayer.bringToBack();
+    });
+  });
+}
+
 // ── Event listeners ──────────────────────────────────────────────────────────
 
 function setupEventListeners() {
@@ -730,9 +778,10 @@ async function init() {
     zoomControl: true
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
+  const dark = BASEMAPS.dark;
+  state.tileLayer = L.tileLayer(dark.url, {
+    attribution: dark.attribution,
+    subdomains: dark.subdomains || '',
     maxZoom: 19
   }).addTo(state.map);
 
@@ -756,6 +805,7 @@ async function init() {
   // Set up controls
   setupEventListeners();
   setupSearch();
+  setupThemeSwitcher();
 
   // Ctrl+double-click to drop a pin
   state.map.on('dblclick', function (e) {

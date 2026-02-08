@@ -166,6 +166,28 @@ html, body {
   color: white;
 }
 
+/* ── Theme buttons ── */
+.theme-btn {
+  background: transparent;
+  border: 1px solid rgba(90, 154, 88, 0.3);
+  color: #e8e8e8;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-btn:hover {
+  border-color: #5a9a58;
+}
+
+.theme-btn.active {
+  background: #3a5a38;
+  border-color: #5a9a58;
+  color: white;
+}
+
 /* ── Boundary toggles ── */
 .toggle-group {
   display: flex;
@@ -428,7 +450,8 @@ html, body {
     top: 48px;
   }
 
-  .view-btn {
+  .view-btn,
+  .theme-btn {
     font-size: 0.65rem;
     padding: 3px 6px;
   }
