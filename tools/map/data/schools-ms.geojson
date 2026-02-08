@@ -6,236 +6,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.906601,
-          36.0033
+          -78.9353547,
+          35.9730588
         ]
       },
       "properties": {
-        "name": "Durham School of the Arts",
-        "address": "401 North Duke Street Durham NC 27701",
-        "dpsid": 323,
-        "lat": 36.0033,
-        "lng": -78.906601,
-        "region": "District-wide",
-        "type": "Middle - High",
-        "calendar": "Traditional",
-        "program": "Arts",
-        "grades": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.822899,
-          36.0719990000001
-        ]
-      },
-      "properties": {
-        "name": "The School for Creative Studies",
-        "address": "5001 Red Mill Road Durham NC 27704",
-        "dpsid": 314,
-        "lat": 36.071999,
-        "lng": -78.822899,
-        "region": "East & North",
-        "type": "Middle",
-        "calendar": "Year-Round",
-        "program": "Year-Round",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.909302,
-          36.0247
-        ]
-      },
-      "properties": {
-        "name": "Brogden Middle School",
-        "address": "1001 Leon Street Durham NC 27704",
-        "dpsid": 306,
-        "lat": 36.0247,
-        "lng": -78.909302,
-        "region": "Central",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "Dual Language Immersion (DLI)",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.917702,
-          36.087299
-        ]
-      },
-      "properties": {
-        "name": "Carrington Middle School",
-        "address": "227 Milton Road Durham NC 27712",
-        "dpsid": 316,
-        "lat": 36.087299,
-        "lng": -78.917702,
-        "region": "North",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "No choice program",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8999019999999,
-          35.9653020000001
-        ]
-      },
-      "properties": {
-        "name": "Shepard Middle School",
-        "address": "2401 Dakota Street Durham NC 27707",
-        "dpsid": 338,
-        "lat": 35.965302,
-        "lng": -78.899902,
-        "region": "Southeast",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "International Baccalaureate (IB)",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.928802,
-          35.9847980000001
-        ]
-      },
-      "properties": {
-        "name": "Lakewood Montessori Middle School",
-        "address": "2119 Chapel Hill Rd Durham NC 27707",
-        "dpsid": 342,
-        "lat": 35.984798,
-        "lng": -78.928802,
-        "region": "Southeast",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "Montessori-aligned",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8862,
-          36.109402
-        ]
-      },
-      "properties": {
-        "name": "Lucas Middle School",
-        "address": "923 Snow Hill Rd Durham NC 27712",
-        "dpsid": 343,
-        "lat": 36.109402,
-        "lng": -78.8862,
-        "region": "North",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "Montessori-aligned",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8908,
-          35.904701
-        ]
-      },
-      "properties": {
-        "name": "Lowes Grove Middle School",
-        "address": "4418 South Alston Avenue Durham NC 27713",
-        "dpsid": 346,
-        "lat": 35.904701,
-        "lng": -78.8908,
-        "region": "Southeast",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "No choice program",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.781898,
-          35.977699
-        ]
-      },
-      "properties": {
-        "name": "Neal Middle School",
-        "address": "201 Baptist Road Durham NC 27704",
-        "dpsid": 355,
-        "lat": 35.977699,
-        "lng": -78.781898,
-        "region": "East",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "No choice program",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.980797,
-          35.944599
-        ]
-      },
-      "properties": {
-        "name": "Githens Middle School",
-        "address": "4800 Old Chapel Hill Road Durham NC 27707",
-        "dpsid": 366,
-        "lat": 35.944599,
-        "lng": -78.980797,
-        "region": "Southeast",
-        "type": "Middle",
-        "calendar": "Traditional",
-        "program": "No choice program",
-        "grades": "6 to 8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.935303,
-          35.973099
-        ]
-      },
-      "properties": {
-        "name": "Rogers-Herr Middle School",
-        "address": "911 Cornwallis Road Durham NC 27707",
+        "name": "Rogers-Herr Middle",
+        "address": "911 Cornwallis Road, Durham, NC 27707",
         "dpsid": 370,
-        "lat": 35.973099,
-        "lng": -78.935303,
+        "lat": 35.9730588,
+        "lng": -78.9353547,
         "region": "Southeast, Southwest, & Central",
         "type": "Middle",
         "calendar": "Year-Round",
@@ -248,21 +28,219 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9367139999999,
-          36.0359950000001
+          -78.9063610,
+          36.0025470
         ]
       },
       "properties": {
-        "name": "Ignite! Online Academy",
-        "address": "2107 Hillandale Rd Durham 27705",
+        "name": "Durham School of the Arts",
+        "address": "401 North Duke Street, Durham, NC 27701",
+        "dpsid": 323,
+        "lat": 36.0025470,
+        "lng": -78.9063610,
+        "region": "District-wide",
+        "type": "Middle - High",
+        "calendar": "Traditional",
+        "program": "Arts",
+        "grades": "6 to 12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8234512,
+          36.0716789
+        ]
+      },
+      "properties": {
+        "name": "The School for Creative Studies",
+        "address": "5001 Red Mill Rd, Durham, NC 27704",
+        "dpsid": 314,
+        "lat": 36.0716789,
+        "lng": -78.8234512,
+        "region": "East & North",
+        "type": "Middle - High",
+        "calendar": "Year-Round",
+        "program": "Year-Round",
+        "grades": "6 to 12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8998042,
+          35.9648449
+        ]
+      },
+      "properties": {
+        "name": "James E Shepard Magnet Middle School",
+        "address": "2401 Dakota Street, Durham, NC 27707",
+        "dpsid": 338,
+        "lat": 35.9648449,
+        "lng": -78.8998042,
+        "region": "Southeast",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "International Baccalaureate (IB)",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9368898,
+          35.9736957
+        ]
+      },
+      "properties": {
+        "name": "Sherwood Githens Middle",
+        "address": "4800 Chapel Hill Road, Durham, NC 27707",
+        "dpsid": 366,
+        "lat": 35.9736957,
+        "lng": -78.9368898,
+        "region": "Southeast",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8876021,
+          36.1096760
+        ]
+      },
+      "properties": {
+        "name": "Lucas Middle School",
+        "address": "923 Snow Hill Road, Durham, NC 27704",
+        "dpsid": 343,
+        "lat": 36.1096760,
+        "lng": -78.8876021,
+        "region": "North",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "Montessori-aligned",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9283864,
+          35.9849384
+        ]
+      },
+      "properties": {
+        "name": "Lakewood Montessori Middle School",
+        "address": "2119 Chapel Hill Rd, Durham, NC 27707",
+        "dpsid": 342,
+        "lat": 35.9849384,
+        "lng": -78.9283864,
+        "region": "Southeast",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "Montessori-aligned",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9931449,
+          35.9294159
+        ]
+      },
+      "properties": {
+        "name": "Ignite Online Academy",
+        "address": "5321 Ephesus Church Rd., Durham, NC 27707",
         "dpsid": 401,
-        "lat": 36.035995,
-        "lng": -78.936714,
+        "lat": 35.9294159,
+        "lng": -78.9931449,
         "region": "District-wide",
         "type": "Specialty",
         "calendar": "Traditional",
         "program": "Online/Virtual",
         "grades": "K to 12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9091516,
+          36.0250238
+        ]
+      },
+      "properties": {
+        "name": "Brogden Middle",
+        "address": "1001 Leon Street, Durham, NC 27704",
+        "dpsid": 306,
+        "lat": 36.0250238,
+        "lng": -78.9091516,
+        "region": "Central",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "Dual Language Immersion (DLI)",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8909910,
+          35.9042499
+        ]
+      },
+      "properties": {
+        "name": "Lowe's Grove Middle",
+        "address": "4418 S Alston Avenue, Durham, NC 27713",
+        "dpsid": 346,
+        "lat": 35.9042499,
+        "lng": -78.8909910,
+        "region": "Southeast",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "6 to 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9180575,
+          36.0869268
+        ]
+      },
+      "properties": {
+        "name": "George L Carrington Middle",
+        "address": "227 Milton Road, Durham, NC 27712",
+        "dpsid": 316,
+        "lat": 36.0869268,
+        "lng": -78.9180575,
+        "region": "North",
+        "type": "Middle",
+        "calendar": "Traditional",
+        "program": "No choice program",
+        "grades": "6 to 8"
       }
     }
   ]

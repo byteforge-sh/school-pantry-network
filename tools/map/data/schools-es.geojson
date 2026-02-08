@@ -6,296 +6,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.8967000003047,
-          36.0192999997952
-        ]
-      },
-      "properties": {
-        "name": "Club Boulevard Elementary",
-        "address": "400 W Club Boulevard",
-        "dpsid": 318,
-        "lat": 36.0193,
-        "lng": -78.8967,
-        "region": "Central",
-        "capacity": 464,
-        "enrollment": 389,
-        "isp": "24%",
-        "program": "Dual Language Instruction",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9060000001998,
-          36.0558999995854
-        ]
-      },
-      "properties": {
-        "name": "Holt Elementary",
-        "address": "4019 Holt School Road",
-        "dpsid": 328,
-        "lat": 36.0559,
-        "lng": -78.906,
-        "region": "North",
-        "capacity": 582,
-        "enrollment": 667,
-        "isp": "43%",
-        "program": "Dual Language Instruction",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9236702799594,
-          35.8732324098479
-        ]
-      },
-      "properties": {
-        "name": "Lyons Farm",
-        "address": "906 Scott King Road",
-        "dpsid": 349,
-        "lat": 35.87323241,
-        "lng": -78.92367028,
-        "region": "Southeast",
-        "capacity": 582,
-        "enrollment": null,
-        "isp": " ",
-        "program": "Dual Language Instruction",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8520000001998,
-          36.0056000002399
-        ]
-      },
-      "properties": {
-        "name": "Merrick-Moore Elementary",
-        "address": "2325 Cheek Road",
-        "dpsid": 352,
-        "lat": 36.0056,
-        "lng": -78.852,
-        "region": "East",
-        "capacity": 582,
-        "enrollment": 547,
-        "isp": "55%",
-        "program": "Dual Language Instruction",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9240000001998,
-          35.9289000002349
-        ]
-      },
-      "properties": {
-        "name": "Southwest Elementary",
-        "address": "2320 Cook Road",
-        "dpsid": 372,
-        "lat": 35.9289,
-        "lng": -78.924,
-        "region": "Southwest",
-        "capacity": 582,
-        "enrollment": 618,
-        "isp": "39%",
-        "program": "Dual Language Instruction",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.887699999855,
-          35.9792999996953
-        ]
-      },
-      "properties": {
-        "name": "Burton Elementary",
-        "address": "1500 Mathison Avenue",
-        "dpsid": 308,
-        "lat": 35.9793,
-        "lng": -78.8877,
-        "region": "Southeast",
-        "capacity": 390,
-        "enrollment": 295,
-        "isp": "55%",
-        "program": " International Baccalaureate",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9224000001598,
-          36.0129999997503
-        ]
-      },
-      "properties": {
-        "name": "E K Powe Elementary",
-        "address": "913 9th Street",
-        "dpsid": 363,
-        "lat": 36.013,
-        "lng": -78.9224,
-        "region": "Central",
-        "capacity": 619,
-        "enrollment": 395,
-        "isp": "35%",
-        "program": " International Baccalaureate",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8631000003647,
-          36.0988000003198
-        ]
-      },
-      "properties": {
-        "name": "Little River K-8 School",
-        "address": "2315 Snow Hill Road",
-        "dpsid": 340,
-        "lat": 36.0988,
-        "lng": -78.8631,
-        "region": "North",
-        "capacity": 489,
-        "enrollment": 414,
-        "isp": "23%",
-        "program": "Montessori",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9107000002048,
-          36.0081999996303
-        ]
-      },
-      "properties": {
-        "name": "George Watts Elementary",
-        "address": "700 Watts Street",
-        "dpsid": 347,
-        "lat": 36.0082,
-        "lng": -78.9107,
-        "region": "Central",
-        "capacity": 390,
-        "enrollment": 281,
-        "isp": "13%",
-        "program": "Montessori",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9137000000549,
-          35.9887999998202
-        ]
-      },
-      "properties": {
-        "name": "Morehead Montessori",
-        "address": "909 Cobb Street",
-        "dpsid": 354,
-        "lat": 35.9888,
-        "lng": -78.9137,
-        "region": "Southwest",
-        "capacity": 260,
-        "enrollment": 197,
-        "isp": "15%",
-        "program": "Montessori",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8850000003497,
-          35.9910999997652
-        ]
-      },
-      "properties": {
-        "name": "Eastway Elementary",
-        "address": "610 North Alston Avenue",
-        "dpsid": 310,
-        "lat": 35.9911,
-        "lng": -78.885,
-        "region": "Central",
-        "capacity": 489,
-        "enrollment": 421,
-        "isp": "55%",
-        "program": "Year-Round",
-        "calendar": "Year-Round"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9267999998201,
-          36.0756999998551
-        ]
-      },
-      "properties": {
-        "name": "Easley Elementary",
-        "address": "302 Lebanon Circle",
-        "dpsid": 313,
-        "lat": 36.0757,
-        "lng": -78.9268,
-        "region": "North",
-        "capacity": 489,
-        "enrollment": 459,
-        "isp": "15%",
-        "program": "Year-Round",
-        "calendar": "Year-Round"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9381000002148,
-          35.9675999997402
+          -78.9396514,
+          35.9674484
         ]
       },
       "properties": {
         "name": "Hope Valley Elementary",
-        "address": "3005 Dixon Road",
+        "address": "3005 Dixon Road, Durham, NC 27707",
         "dpsid": 327,
-        "lat": 35.9676,
-        "lng": -78.9381,
+        "lat": 35.9674484,
+        "lng": -78.9396514,
         "region": "Southwest",
         "capacity": 619,
         "enrollment": 611,
-        "isp": "35%",
+        "isp": 35,
         "program": "Year-Round",
         "calendar": "Year-Round"
       }
@@ -305,112 +29,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.818899999935,
-          35.9799000003848
-        ]
-      },
-      "properties": {
-        "name": "Oak Grove Elementary",
-        "address": "3810 Wake Forest Road",
-        "dpsid": 360,
-        "lat": 35.9799,
-        "lng": -78.8189,
-        "region": "East",
-        "capacity": 749,
-        "enrollment": 476,
-        "isp": "43%",
-        "program": "Year-Round",
-        "calendar": "Year-Round"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9085999995903,
-          35.9322999996453
-        ]
-      },
-      "properties": {
-        "name": "Pearsontown Elementary",
-        "address": "4915 Barbee Road",
-        "dpsid": 364,
-        "lat": 35.9323,
-        "lng": -78.9086,
-        "region": "Southeast",
-        "capacity": 829,
-        "enrollment": 700,
-        "isp": "15%",
-        "program": "Year-Round",
-        "calendar": "Year-Round"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8378000000699,
-          35.9401999997303
-        ]
-      },
-      "properties": {
-        "name": "Bethesda Elementary",
-        "address": "2009 S Miami Boulevard",
-        "dpsid": 304,
-        "lat": 35.9402,
-        "lng": -78.8378,
-        "region": "East",
-        "capacity": 556,
-        "enrollment": 649,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9125999996902,
-          36.0849999997503
-        ]
-      },
-      "properties": {
-        "name": "Eno Valley Elementary",
-        "address": "117 Milton Road",
-        "dpsid": 315,
-        "lat": 36.085,
-        "lng": -78.9126,
-        "region": "North",
-        "capacity": 674,
-        "enrollment": 507,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9944000001598,
-          35.9287000000051
+          -78.9931449,
+          35.9294159
         ]
       },
       "properties": {
         "name": "Creekside Elementary",
-        "address": "5321 Ephesus Church Road",
+        "address": "5321 Ephesus Church Road, Durham, NC 27707",
         "dpsid": 319,
-        "lat": 35.9287,
-        "lng": -78.9944,
+        "lat": 35.9294159,
+        "lng": -78.9931449,
         "region": "Southwest",
         "capacity": 556,
         "enrollment": 792,
-        "isp": "22%",
+        "isp": 22,
         "program": "No choice program",
         "calendar": "Traditional"
       }
@@ -420,44 +52,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.8381000004147,
-          36.028900000035
+          -78.9064834,
+          36.0562431
         ]
       },
       "properties": {
-        "name": "Glenn Elementary",
-        "address": "2415 E Geer Street",
-        "dpsid": 320,
-        "lat": 36.0289,
-        "lng": -78.8381,
-        "region": "East",
-        "capacity": 556,
-        "enrollment": 562,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9330999998651,
-          36.0526000002898
-        ]
-      },
-      "properties": {
-        "name": "Hillandale Elementary",
-        "address": "2730 Hillandale Road",
-        "dpsid": 324,
-        "lat": 36.0526,
-        "lng": -78.9331,
+        "name": "Holt Elementary",
+        "address": "4019 Holt School Road, Durham, NC 27704",
+        "dpsid": 328,
+        "lat": 36.0562431,
+        "lng": -78.9064834,
         "region": "North",
-        "capacity": 556,
-        "enrollment": 523,
-        "isp": "40%",
-        "program": "No choice program",
+        "capacity": 582,
+        "enrollment": 667,
+        "isp": 43,
+        "program": "Dual Language Instruction",
         "calendar": "Traditional"
       }
     },
@@ -466,89 +75,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9921000002148,
-          35.98900000005
-        ]
-      },
-      "properties": {
-        "name": "Forest View Elementary",
-        "address": "3007 Mount Sinai Road",
-        "dpsid": 332,
-        "lat": 35.989,
-        "lng": -78.9921,
-        "region": "Southwest",
-        "capacity": 674,
-        "enrollment": 691,
-        "isp": "26%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.935499999925,
-          35.9831999996803
-        ]
-      },
-      "properties": {
-        "name": "Lakewood Elementary",
-        "address": "2520 Vesson Avenue",
-        "dpsid": 339,
-        "lat": 35.9832,
-        "lng": -78.9355,
-        "region": "Southeast",
-        "capacity": 354,
-        "enrollment": 363,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9055999997402,
-          35.9644999997752
-        ]
-      },
-      "properties": {
-        "name": "Fayetteville Street Elementary",
-        "address": "2905 Fayetteville Street",
-        "dpsid": 344,
-        "lat": 35.9645,
-        "lng": -78.9056,
-        "region": "Southeast",
-        "capacity": 354,
-        "enrollment": 207,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8764999995753,
-          36.16980000007
+          -78.8789457,
+          36.1712168
         ]
       },
       "properties": {
         "name": "Mangum Elementary",
-        "address": "9008 Quail Roost Road",
+        "address": "9008 Quail Roost Road, Bahama, NC 27703",
         "dpsid": 348,
-        "lat": 36.1698,
-        "lng": -78.8765,
+        "lat": 36.1712168,
+        "lng": -78.8789457,
         "region": "North",
         "capacity": 354,
         "enrollment": 267,
-        "isp": "16%",
+        "isp": 16,
         "program": "No choice program",
         "calendar": "Traditional"
       }
@@ -558,137 +98,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9063999997601,
-          35.8914000003098
+          -78.9236703,
+          35.8733648
         ]
       },
       "properties": {
-        "name": "Parkwood Elementary",
-        "address": "5207 Revere Road",
-        "dpsid": 362,
-        "lat": 35.8914,
-        "lng": -78.9064,
+        "name": "Lyons Farm Elementary School",
+        "address": "906 Scott King Rd, Durham, NC 27713",
+        "dpsid": 349,
+        "lat": 35.8733648,
+        "lng": -78.9236703,
         "region": "Southeast",
-        "capacity": 556,
-        "enrollment": 643,
-        "isp": "42%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.88379999987,
-          35.9712000002799
-        ]
-      },
-      "properties": {
-        "name": "R N Harris Elementary",
-        "address": "1520 Cooper Street",
-        "dpsid": 367,
-        "lat": 35.9712,
-        "lng": -78.8838,
-        "region": "Southeast",
-        "capacity": 354,
-        "enrollment": 262,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8715000001248,
-          36.0576999998552
-        ]
-      },
-      "properties": {
-        "name": "Sandy Ridge Elementary",
-        "address": "1417 Old Oxford Highway",
-        "dpsid": 369,
-        "lat": 36.0577,
-        "lng": -78.8715,
-        "region": "North",
-        "capacity": 556,
-        "enrollment": 460,
-        "isp": "38%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9060000001998,
-          35.9782000002299
-        ]
-      },
-      "properties": {
-        "name": "C C Spaulding Elementary",
-        "address": "1531 S Roxboro Road",
-        "dpsid": 374,
-        "lat": 35.9782,
-        "lng": -78.906,
-        "region": "Southwest",
-        "capacity": 354,
-        "enrollment": 218,
-        "isp": "55%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.8152200002028,
-          35.956120000038
-        ]
-      },
-      "properties": {
-        "name": "Spring Valley Elementary",
-        "address": "2051 Northern Durham Prky",
-        "dpsid": 376,
-        "lat": 35.95612,
-        "lng": -78.81522,
-        "region": "East",
-        "capacity": 556,
-        "enrollment": 525,
-        "isp": "30%",
-        "program": "No choice program",
-        "calendar": "Traditional"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9076889998474,
-          35.9582619998914
-        ]
-      },
-      "properties": {
-        "name": "W G Pearson Elementary",
-        "address": "3501 Fayettville Street",
-        "dpsid": 388,
-        "lat": 35.958262,
-        "lng": -78.907689,
-        "region": "Southeast",
-        "capacity": 438,
+        "capacity": 582,
         "enrollment": null,
         "isp": null,
-        "program": "No choice program",
-        "calendar": null
+        "program": "Dual Language Instruction",
+        "calendar": "Traditional"
       }
     },
     {
@@ -696,20 +121,112 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.8730000000499,
-          35.9855999997403
+          -78.9333155,
+          36.0524508
+        ]
+      },
+      "properties": {
+        "name": "Hillandale Elementary",
+        "address": "2730 Hillandale Road, Durham, NC 27705",
+        "dpsid": 324,
+        "lat": 36.0524508,
+        "lng": -78.9333155,
+        "region": "North",
+        "capacity": 556,
+        "enrollment": 523,
+        "isp": 40,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8966461,
+          36.0192142
+        ]
+      },
+      "properties": {
+        "name": "Club Boulevard Elementary",
+        "address": "400 W Club Boulevard, Durham, NC 27704",
+        "dpsid": 318,
+        "lat": 36.0192142,
+        "lng": -78.8966461,
+        "region": "Central",
+        "capacity": 464,
+        "enrollment": 389,
+        "isp": 24,
+        "program": "Dual Language Instruction",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8519514,
+          36.0054223
+        ]
+      },
+      "properties": {
+        "name": "Merrick-Moore Elementary",
+        "address": "2325 Cheek Road, Durham, NC 27704",
+        "dpsid": 352,
+        "lat": 36.0054223,
+        "lng": -78.8519514,
+        "region": "East",
+        "capacity": 582,
+        "enrollment": 547,
+        "isp": 55,
+        "program": "Dual Language Instruction",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9354446,
+          35.9830548
+        ]
+      },
+      "properties": {
+        "name": "Lakewood Elementary",
+        "address": "2520 Vesson Avenue, Durham, NC 27707",
+        "dpsid": 339,
+        "lat": 35.9830548,
+        "lng": -78.9354446,
+        "region": "Southeast",
+        "capacity": 354,
+        "enrollment": 363,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8729290,
+          35.9854492
         ]
       },
       "properties": {
         "name": "Y E Smith Elementary",
-        "address": "2410 E Main Street",
+        "address": "2410 E Main Street, Durham, NC 27703",
         "dpsid": 400,
-        "lat": 35.9856,
-        "lng": -78.873,
+        "lat": 35.9854492,
+        "lng": -78.8729290,
         "region": "Central",
         "capacity": 438,
         "enrollment": 283,
-        "isp": "55%",
+        "isp": 55,
         "program": "No choice program",
         "calendar": "Traditional"
       }
@@ -719,22 +236,459 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9262545196303,
-          35.9446365703215
+          -78.9082601,
+          35.9320941
         ]
       },
       "properties": {
-        "name": "Murray-Massenburg",
-        "address": "3900 S. Roxboro Road",
-        "dpsid": 999,
-        "lat": 35.94463657,
-        "lng": -78.92625452,
+        "name": "Pearsontown Elementary",
+        "address": "4915 Barbee Road, Durham, NC 27713",
+        "dpsid": 364,
+        "lat": 35.9320941,
+        "lng": -78.9082601,
+        "region": "Southeast",
+        "capacity": 829,
+        "enrollment": 700,
+        "isp": 15,
+        "program": "Year-Round",
+        "calendar": "Year-Round"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9130052,
+          36.0853886
+        ]
+      },
+      "properties": {
+        "name": "Eno Valley Elementary",
+        "address": "117 Milton Road, Durham, NC 27712",
+        "dpsid": 315,
+        "lat": 36.0853886,
+        "lng": -78.9130052,
+        "region": "North",
+        "capacity": 674,
+        "enrollment": 507,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9234453,
+          35.9286642
+        ]
+      },
+      "properties": {
+        "name": "Southwest Elementary",
+        "address": "2320 Cook Road, Durham, NC 27713",
+        "dpsid": 372,
+        "lat": 35.9286642,
+        "lng": -78.9234453,
+        "region": "Southwest",
+        "capacity": 582,
+        "enrollment": 618,
+        "isp": 39,
+        "program": "Dual Language Instruction",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9223972,
+          36.0131853
+        ]
+      },
+      "properties": {
+        "name": "E K Powe Elementary",
+        "address": "913 9th Street, Durham, NC 27705",
+        "dpsid": 363,
+        "lat": 36.0131853,
+        "lng": -78.9223972,
+        "region": "Central",
+        "capacity": 619,
+        "enrollment": 395,
+        "isp": 35,
+        "program": "International Baccalaureate",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8377877,
+          35.9407167
+        ]
+      },
+      "properties": {
+        "name": "Bethesda Elementary",
+        "address": "2009 S Miami Boulevard, Durham, NC 27703",
+        "dpsid": 304,
+        "lat": 35.9407167,
+        "lng": -78.8377877,
+        "region": "East",
+        "capacity": 556,
+        "enrollment": 649,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8876955,
+          35.9782293
+        ]
+      },
+      "properties": {
+        "name": "Burton Elementary",
+        "address": "1500 Mathison Street, Durham, NC 27701",
+        "dpsid": 308,
+        "lat": 35.9782293,
+        "lng": -78.8876955,
+        "region": "Southeast",
+        "capacity": 390,
+        "enrollment": 295,
+        "isp": 55,
+        "program": "International Baccalaureate",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9931449,
+          35.9294159
+        ]
+      },
+      "properties": {
+        "name": "Ignite Online Academy",
+        "address": "5321 Ephesus Church Rd., Durham, NC 27707",
+        "dpsid": 401,
+        "lat": 35.9294159,
+        "lng": -78.9931449,
+        "region": "District-wide",
+        "capacity": null,
+        "enrollment": null,
+        "isp": null,
+        "program": "Online/Virtual",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9261354,
+          35.9442962
+        ]
+      },
+      "properties": {
+        "name": "Murray-Massenburg Elementary",
+        "address": "3901 S Roxboro St, Durham, NC 27713",
+        "dpsid": 351,
+        "lat": 35.9442962,
+        "lng": -78.9261354,
         "region": "Southwest",
         "capacity": 674,
         "enrollment": null,
         "isp": null,
         "program": "No choice program",
         "calendar": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8636214,
+          36.0986266
+        ]
+      },
+      "properties": {
+        "name": "Little River Elementary",
+        "address": "2315 Snow Hill Road, Durham, NC 27712",
+        "dpsid": 340,
+        "lat": 36.0986266,
+        "lng": -78.8636214,
+        "region": "North",
+        "capacity": 489,
+        "enrollment": 414,
+        "isp": 23,
+        "program": "Montessori",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9062514,
+          35.8914633
+        ]
+      },
+      "properties": {
+        "name": "Parkwood Elementary",
+        "address": "5207 Revere Road, Durham, NC 27713",
+        "dpsid": 362,
+        "lat": 35.8914633,
+        "lng": -78.9062514,
+        "region": "Southeast",
+        "capacity": 556,
+        "enrollment": 643,
+        "isp": 42,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9099358,
+          36.0957684
+        ]
+      },
+      "properties": {
+        "name": "C C Spaulding Elementary",
+        "address": "1531 S Roxboro Road, Durham, NC 27707",
+        "dpsid": 374,
+        "lat": 36.0957684,
+        "lng": -78.9099358,
+        "region": "Southwest",
+        "capacity": 354,
+        "enrollment": 218,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8838058,
+          35.9703461
+        ]
+      },
+      "properties": {
+        "name": "R N Harris Elementary",
+        "address": "1520 Cooper Street, Durham, NC 27703",
+        "dpsid": 367,
+        "lat": 35.9703461,
+        "lng": -78.8838058,
+        "region": "Southeast",
+        "capacity": 354,
+        "enrollment": 262,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9054879,
+          35.9641514
+        ]
+      },
+      "properties": {
+        "name": "Fayetteville Street Elementary",
+        "address": "2905 Fayetteville Street, Durham, NC 27707",
+        "dpsid": 344,
+        "lat": 35.9641514,
+        "lng": -78.9054879,
+        "region": "Southeast",
+        "capacity": 354,
+        "enrollment": 207,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9920020,
+          35.9889722
+        ]
+      },
+      "properties": {
+        "name": "Forest View Elementary",
+        "address": "3007 Mount Sinai Road, Durham, NC 27705",
+        "dpsid": 332,
+        "lat": 35.9889722,
+        "lng": -78.9920020,
+        "region": "Southwest",
+        "capacity": 674,
+        "enrollment": 691,
+        "isp": 26,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8377654,
+          36.0289572
+        ]
+      },
+      "properties": {
+        "name": "Glenn Elementary",
+        "address": "2415 E Geer Street, Durham, NC 27704",
+        "dpsid": 320,
+        "lat": 36.0289572,
+        "lng": -78.8377654,
+        "region": "East",
+        "capacity": 556,
+        "enrollment": 562,
+        "isp": 55,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8849227,
+          35.9911662
+        ]
+      },
+      "properties": {
+        "name": "Eastway Elementary",
+        "address": "610 North Alston Avenue, Durham, NC 27701",
+        "dpsid": 310,
+        "lat": 35.9911662,
+        "lng": -78.8849227,
+        "region": "Central",
+        "capacity": 489,
+        "enrollment": 421,
+        "isp": 55,
+        "program": "Year-Round",
+        "calendar": "Year-Round"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9101239,
+          36.0081821
+        ]
+      },
+      "properties": {
+        "name": "George Watts Elementary",
+        "address": "700 Watts Street, Durham, NC 27701",
+        "dpsid": 347,
+        "lat": 36.0081821,
+        "lng": -78.9101239,
+        "region": "Central",
+        "capacity": 390,
+        "enrollment": 281,
+        "isp": 13,
+        "program": "Montessori",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8517260,
+          36.0835546
+        ]
+      },
+      "properties": {
+        "name": "Sandy Ridge Elementary School",
+        "address": "1417 Old Oxford Highway, Durham, NC 27704",
+        "dpsid": 369,
+        "lat": 36.0835546,
+        "lng": -78.8517260,
+        "region": "North",
+        "capacity": 556,
+        "enrollment": 460,
+        "isp": 38,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9268729,
+          36.0754225
+        ]
+      },
+      "properties": {
+        "name": "Easley Elementary",
+        "address": "302 Lebanon Circle, Durham, NC 27712",
+        "dpsid": 313,
+        "lat": 36.0754225,
+        "lng": -78.9268729,
+        "region": "North",
+        "capacity": 489,
+        "enrollment": 459,
+        "isp": 15,
+        "program": "Year-Round",
+        "calendar": "Year-Round"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9137456,
+          35.9886924
+        ]
+      },
+      "properties": {
+        "name": "Morehead Montessori",
+        "address": "909 Cobb Street, Durham, NC 27707",
+        "dpsid": 354,
+        "lat": 35.9886924,
+        "lng": -78.9137456,
+        "region": "Southwest",
+        "capacity": 260,
+        "enrollment": 197,
+        "isp": 15,
+        "program": "Montessori",
+        "calendar": "Traditional"
       }
     }
   ]
