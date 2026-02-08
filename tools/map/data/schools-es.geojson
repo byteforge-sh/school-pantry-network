@@ -397,6 +397,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.8154523,
+          35.9558102
+        ]
+      },
+      "properties": {
+        "name": "Spring Valley Elementary School",
+        "address": "2051 Northern Durham Pkwy, Durham, NC 27703",
+        "dpsid": 376,
+        "lat": 35.9558102,
+        "lng": -78.8154523,
+        "region": "East",
+        "capacity": 556,
+        "enrollment": 525,
+        "isp": 30,
+        "program": "No choice program",
+        "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9130052,
           36.0853886
         ]
@@ -712,6 +735,29 @@
         "isp": 42,
         "program": "No choice program",
         "calendar": "Traditional"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8192904,
+          35.9799386
+        ]
+      },
+      "properties": {
+        "name": "Oak Grove Elementary",
+        "address": "3810 Wake Forest Hwy, Durham, NC 27703",
+        "dpsid": 360,
+        "lat": 35.9799386,
+        "lng": -78.8192904,
+        "region": "East",
+        "capacity": 749,
+        "enrollment": 476,
+        "isp": 43,
+        "program": "Year-Round",
+        "calendar": "Year-Round"
       }
     },
     {
