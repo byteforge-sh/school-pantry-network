@@ -248,16 +248,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9368898,
-          35.9736957
+          -78.9364079,
+          35.9761052
         ]
       },
       "properties": {
         "name": "Sherwood Githens Middle",
         "address": "4800 Chapel Hill Road, Durham, NC 27707",
         "dpsid": 366,
-        "lat": 35.9736957,
-        "lng": -78.9368898,
+        "lat": 35.9761052,
+        "lng": -78.9364079,
         "region": "Southeast",
         "type": "Middle",
         "calendar": "Traditional",

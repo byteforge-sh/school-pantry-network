@@ -29,16 +29,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9023313,
-          36.0382381
+          -78.9021470,
+          36.0377360
         ]
       },
       "properties": {
         "name": "City of Medicine Academy",
         "address": "200 Wisteria Avenue, Durham, NC 27704",
         "dpsid": 317,
-        "lat": 36.0382381,
-        "lng": -78.9023313,
+        "lat": 36.0377360,
+        "lng": -78.9021470,
         "region": "District-wide",
         "type": "High",
         "calendar": "Speciality - College",
